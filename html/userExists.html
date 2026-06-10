@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title> התחברות</title>
+    <link rel='stylesheet' href='../style.css'>
+    <link class="js-favicon" rel="icon" type="image/png" href="../pic/לוגו סמל.png">
+</head>
+
+<body>
+    <div class="page-wrapper">
+        <a href="pageHome.html">
+            <img src="../pic/topp.png" alt="לוגו האתר" class="top-logo">
+        </a>
+
+    <div class="form-card">
+
+        <h1>כניסה</h1>
+        <form onsubmit="event.preventDefault(); checkLogin();">
+            <div class="input-group">
+                <label for="user">אימייל או שם משתמש</label>
+                <input type="text" id="user" name="username" required>
+            </div>
+            <div class="input-group">
+                <label for="pass">סיסמה</label>
+                <input type="password" id="pass" name="password" required>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-secondary">התחברות</button>
+        </form>
+        <div class="link">חדשים באתר? <a href="userNew.html">להרשמה</a></div>
+    </div>
+
+
+
+    <script src="../JS/login.js"></script>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,528 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: auto;
+    font-family: system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+/* עיצוב התמונה שתהיה על כל המסך */
+#home {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* מיכל עבור הכפתורים - כדי שיעמדו יפה אחד ליד השני עם מרווח */
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 650px;
+    font-family: sans-serif;
+}
+
+/* עיצוב בסיסי המשותף לשני הכפתורים */
+.btn {
+    padding: 12px 35px;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+/* 1. כפתור ראשי - הירשם (מלא בצבע ירוק-מרווה) */
+.btn-primary {
+    background-color: #7c8c83;
+    color: #ffffff;
+}
+
+/* אפקט מעבר לעכבר - כפתור ראשי */
+.btn-primary:hover {
+    background-color: #7a9386;
+    border-color: #7a9386;
+}
+
+/* 2. כפתור משני - משתמש קיים (שקוף עם מסגרת עדינה) */
+.btn-secondary {
+    background-color: transparent;
+    color: #7c8c83;
+    border: 2px solid #7c8c83;
+}
+
+/* אפקט מעבר לעכבר - כפתור משני */
+.btn-secondary:hover {
+    background-color: rgba(143, 168, 155, 0.1);
+}
+
+.form-card {
+    padding: 30px 40px;
+    width: 90%;
+    max-width: 450px;
+    height: auto;
+    border-radius: 12px;
+    border: 3px solid #8fa89b;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+}
+
+h1 {
+    color: #96b3a4;
+    font-weight: 400;
+    margin-bottom: 30px;
+    font-size: 24px;
+}
+
+label {
+    display: block;
+    font-size: 15px;
+    color: #5b6b63;
+    margin-bottom: 15px;
+}
+
+.row-flex {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #8fa89b;
+    border-radius: 6px;
+    background-color: #fafbfa;
+    box-sizing: border-box;
+    outline: none;
+    transition: all 0.2s;
+}
+
+input:focus,
+select:focus {
+    border-color: #5b6b63;
+    background-color: #ffffff;
+}
+
+.link {
+    display: block;
+    margin-top: 20px;
+    font-size: 15px;
+    color: #7f968a;
+    text-decoration: none;
+}
+
+.link a {
+    color: #8fa89b;
+    text-decoration: none;
+}
+
+/* תוספות עיצוב ספציפיות לרכיבי דף הבית */
+.welcome-text {
+    font-size: 20px;
+    color: #475569;
+    margin-bottom: 5px;
+}
+
+/* תוקן מ-absolute ל-fixed כדי שהטופס לא ייגרר למטה כשהדף מתארך */
+.form-box {
+    position: fixed;
+    top: 5%;
+    right: 5%;
+    font-size: 18px;
+    color: #475569;
+    font-weight: 500;
+    height: auto;
+}
+
+.subtitle {
+    font-size: 16px;
+    color: #6E8268;
+    margin-bottom: 40px;
+}
+
+/* עיצוב הטיימר המינימליסטי בפינה התחתונה */
+.timer-container {
+    position: fixed;
+    bottom: 20px;
+    right: 3%;
+    background: #ffffff;
+    border-radius: 14px;
+    border: 1px solid #c4913a;
+    ;
+    padding: 20px 28px;
+    text-align: center;
+    width: 260px;
+}
+
+.timer-icon {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.timer-label {
+    font-size: 14px;
+    color: #7a8c82;
+    margin-bottom: 16px;
+}
+
+.timer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-bottom: 14px;
+}
+
+.timer-cell {
+    text-align: center;
+}
+
+.timer-num {
+    font-size: 23px;
+    font-weight: 700;
+    color: #4a5e52;
+}
+
+.timer-unit {
+    font-size: 11px;
+    color: #9aab9f;
+    margin-top: 2px;
+}
+
+.timer-tagline {
+    font-size: 14px;
+    color: #c4913a;
+    font-style: italic;
+    font-weight: 500;
+}
+
+.timer-icon svg {
+    width: 28px;
+    height: 28px;
+    stroke: #7c9b7e;
+    stroke-width: 1.5;
+}
+
+.top-logo {
+    position: absolute;
+    top: 5%;
+    left: 2%;
+    width: 15%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* --- פתקים ואינטראקציות בצדדים --- */
+.p-top {
+    display: block;
+    margin: 15px 5% 0 auto;
+    width: 220px;
+    height: auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.p-top:hover {
+    transform: scale(1.03) rotate(1deg);
+}
+
+.p-side-2 {
+    display: block;
+    position: absolute;
+    bottom: 15%;
+    left: 5%;
+    width: 220px;
+    height: auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.p-side-2:hover {
+    transform: scale(1.03) rotate(1deg);
+}
+
+.more-lists {
+    text-align: center;
+    margin: 25px 0;
+}
+
+.btn-list {
+    display: inline-block;
+    background: #adc2b1;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 12px 24px;
+    border-radius: 25px;
+    transition: 0.2s ease;
+}
+
+.btn-list:hover {
+    background: #8da191;
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   החלק המעודכן, המיושר והמקוצר - מונע דריסות, משלב עיגולי אייקונים
+   ========================================================================== */
+
+/* אלמנט העטיפה הראשי (לוח הרקע והמסגרת הירוקה) */
+.page-wrapper {
+    width: 100%;
+    min-height: 100vh;
+    background-image: url('pic/לוח.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    border: 4px outset #7c8c83;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 4vh;
+    padding-bottom: 8vh;
+    box-sizing: border-box;
+    gap: 0;
+    /* מרווח יציב ואנכי בין אלמנטים */
+}
+
+/* מד האחוזים האופקי - מיושר ויציב בזרימת הדף */
+.Task_index {
+    width: 38%;
+    min-width: 340px;
+    margin-bottom: 15px;
+    padding: 12px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+    border: 2px solid #adc2b1;
+    box-sizing: border-box;
+    direction: rtl;
+    z-index: 10;
+}
+
+.index_top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.index_title {
+    margin: 0;
+    font-size: 15px;
+    color: #5b6b63;
+}
+
+.sparkle-icon {
+    color: #adc2b1;
+}
+
+.percentage {
+    font-size: 18px;
+    color: #5b6b63;
+}
+
+.ruler {
+    width: 100%;
+    height: 6px;
+    background-color: #fbf9f1;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress_ruler {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #7c8c83 0%, #adc2b1 100%);
+    border-radius: 10px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: width 0.5s ease-in-out;
+}
+
+.bottom-text {
+    margin-top: 4px;
+    font-size: 12px;
+    color: #7f968a;
+    text-align: center;
+}
+
+#Completed {
+    font-weight: bold;
+    color: #5b6b63;
+}
+
+/* אזור המשימות הכללי */
+.tasks-section {
+    position: relative;
+    width: 38%;
+    min-width: 340px;
+    z-index: 2;
+    margin-top: 0;
+    padding-top: 0;
+
+}
+
+.tasks-section h2 {
+    color: #ba8832;
+    font-size: 22px;
+    margin-bottom: 8px;
+    margin-top: 0;
+    text-align: center;
+    font-weight: 600;
+}
+.title-deco {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.title-line {
+    display: block;
+    width: 150px;
+    height: 1px;
+    background: #c4913a55;
+}
+
+.title-heart {
+    font-size: 20px;
+    color: #c4913a;
+}
+
+/* התיבה הכללית של הפתק (קומפקטי וקצר) */
+.category-card {
+    background: #fbf9f1;
+    border: 1px solid #edf0ee;
+    border-top: 15px solid #adc2b1;
+    color: #475569;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.04);
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(143, 168, 155, 0.1);
+}
+
+/* שורת הכותרת - מסדרת את העיגול והטקסט בקו ישר (Flex) */
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px 20px;
+    cursor: pointer;
+    width: 100%;
+    user-select: none;
+    box-sizing: border-box;
+}
+
+/* עיגול האייקון החדש */
+.icon-box {
+    width: 44px;
+    height: 44px;
+    background-color: #adc2b1;
+    border: 2px solid #e1dcd6;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.icon-box svg {
+    width: 20px;
+    height: 20px;
+    stroke: #5b6b63;
+    stroke-width: 1.8;
+}
+
+.icon {
+    font-size: 18px;
+    line-height: 1;
+}
+
+/* טקסט הכותרת שליד האייקון */
+.card-header .title {
+    font-size: 17px;
+    color: #866c2d;
+    font-weight: 600;
+    margin: 0;
+    flex-grow: 1;
+    text-align: right;
+}
+
+/* חץ הפתיחה/סגירה בצד שמאל */
+.arrow {
+    font-size: 12px;
+    color: #8fa89b;
+    transition: transform 0.3s ease;
+    margin-left: 5px;
+}
+
+/* תוכן הרשימה הפנימית (הצ'קבוקסים) */
+.category-content {
+    padding: 20px;
+    background: #ffffff;
+    border-top: 1px dashed #e2e8f0;
+    gap: 14px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* המשימות עצמן בתוך הרשימה */
+.todo-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 15px;
+    color: #475569;
+    cursor: pointer;
+    user-select: none;
+    width: 100%;
+    margin-bottom: 12px;
+}
+
+.todo-item:last-child {
+    margin-bottom: 0;
+}
+
+.todo-item input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
+    min-height: 18px;
+    cursor: pointer;
+    accent-color: #8fa89b;
+}
+
+/* קו מוחק עדין ומעבר צבע למשימה שסומנה */
+.todo-item input[type="checkbox"]:checked~span {
+    color: #5e7268;
+    text-decoration: line-through;
+    transition: color 0.2s ease;
+}

@@ -1,0 +1,328 @@
+[
+    {
+        "categoryKey": "hall",
+        "categoryTitle": "שלב א‘ הכנות לאירוסין",
+        "tasks": [
+            {
+                "id": "task-hall-1",
+                "text": "למצוא אולם, לתאם עם קייטרינג",
+                "checked": false
+            },
+            {
+                "id": "task-hall-2",
+                "text": "לסכם על תפריט",
+                "checked": false
+            },
+            {
+                "id": "task-hall-3",
+                "text": "לסכם עם מסרקת",
+                "checked": false
+            },
+            {
+                "id": "task-hall-4",
+                "text": "לקנות את המתנה לחתן כפי שנהוג אצלכם (שס שעון יד וכד')",
+                "checked": false
+            },
+            {
+                "id": "task-hall-5",
+                "text": "בחירת תכשיטים (כולל טבעת נישואין)",
+                "checked": false
+            },
+            {
+                "id": "task-hall-6",
+                "text": "בגד לאירוסין (אפשר להשכיר)",
+                "checked": false
+            },
+            {
+                "id": "task-hall-7",
+                "text": "להכין רשימת מוזמנים לאירוסין",
+                "checked": false
+            },
+            {
+                "id": "task-hall-8",
+                "text": "להתקשר להזמין אותם",
+                "checked": false
+            },
+            {
+                "id": "task-hall-9",
+                "text": "לא לשכוח להביא שטר תנאים",
+                "checked": false
+            }
+        ]
+    },
+    {
+        "categoryKey": "vendors",
+        "categoryTitle": "שלב ב‘ הכנות ראשוניות לחתונה",
+        "tasks": [
+            {
+                "id": "task-vendors-1",
+                "text": "לבקש מהגבאי של בית הכנסת עליה לחתן כשהוא מתארח אצלכם בשבת אחרי האירוסין",
+                "checked": false
+            },
+            {
+                "id": "task-vendors-2",
+                "text": "לשלם למי ששידך",
+                "checked": false
+            },
+            {
+                "id": "task-vendors-3",
+                "text": "למצוא מדריכת כלות",
+                "checked": false
+            },
+            {
+                "id": "task-vendors-4",
+                "text": "מציאת אולם וקביעת תאריך לחתונה",
+                "checked": false
+            },
+            {
+                "id": "task-vendors-5",
+                "text": "לסכם עם מאפרת לחתונה",
+                "checked": false
+            },
+            {
+                "id": "task-vendors-6",
+                "text": "לסכם עם מסרקת פאה לחתונה",
+                "checked": false
+            },
+            {
+                "id": "task-vendors-7",
+                "text": "לסכם עם תזמורת (בד\"כ צד החתן)",
+                "checked": false
+            },
+            {
+                "id": "task-vendors-8",
+                "text": "לסכם עם צלם וצלמת",
+                "checked": false
+            },
+            {
+                "id": "task-vendors-9",
+                "text": "עריכת שמות המוזמנים ובירור כתובות מדויקות (לוקח זמן)",
+                "checked": false
+            },
+            {
+                "id": "task-vendors-10",
+                "text": "לקנות מתנות לחתן ולמשפחתו, לקראת השבת הראשונה",
+                "checked": false
+            },
+            {
+                "id": "task-vendors-11",
+                "text": "קניית פאה",
+                "checked": false
+            },
+            {
+                "id": "task-vendors-12",
+                "text": "שמלת כלה והינומה / דעקטוך, שכמיה לבנה לחופה",
+                "checked": false
+            },
+            {
+                "id": "task-vendors-13",
+                "text": "למצוא אולם וקייטרינג לשבת שבע ברכות",
+                "checked": false
+            }
+        ]
+    },
+    {
+        "categoryKey": "task_g",
+        "categoryTitle": "שלב ג' המשך הכנות לחתונה",
+        "tasks": [
+            {
+                "id": "task-task_g-1",
+                "text": "עיצוב הזמנה",
+                "checked": false
+            },
+            {
+                "id": "task-task_g-2",
+                "text": "להרשם ברבנות",
+                "checked": false
+            },
+            {
+                "id": "task-task_g-3",
+                "text": "להשיג תפילת כלה",
+                "checked": false
+            },
+            {
+                "id": "task-task_g-4",
+                "text": "קנית רהיטים ומוצרי חשמל",
+                "checked": false
+            },
+            {
+                "id": "task-task_g-5",
+                "text": "קניית בגדים נעליים וכיסויי -ראש",
+                "checked": false
+            },
+            {
+                "id": "task-task_g-6",
+                "text": "ביגוד והנעלה לבני המשפחה",
+                "checked": false
+            },
+            {
+                "id": "task-task_g-7",
+                "text": "לשלוח בגדים חדשים שמצריכים בדיקת שעטנז, לבדיקה, במיוחד חליפות, סוודרים ,מעילים",
+                "checked": false
+            },
+            {
+                "id": "task-task_g-8",
+                "text": "לכתוב הקדשות להזמנות",
+                "checked": false
+            },
+            {
+                "id": "task-task_g-9",
+                "text": "לכתוב כתובות על המעטפות ולהדביק בולים",
+                "checked": false
+            },
+            {
+                "id": "task-task_g-10",
+                "text": "קניית נדוניה (פירוט בהמשך)",
+                "checked": false
+            },
+            {
+                "id": "task-task_g-11",
+                "text": "להחזיר חובות אישיים שלך",
+                "checked": false
+            },
+            {
+                "id": "task-task_g-12",
+                "text": "לצלם תפילה על הזוג, לחלוקה לאורחים לפני תחילת החופה",
+                "checked": false
+            },
+            {
+                "id": "task-task_g-13",
+                "text": "פרחים, עיצוב כסא כלה, פרחים לשולחנות",
+                "checked": false
+            },
+            {
+                "id": "task-task_g-14",
+                "text": "לסכם עם קייטרינג לשבת שבעברכות-תפריט",
+                "checked": false
+            },
+            {
+                "id": "task-task_g-15",
+                "text": "להזמין מגמחי”ם כל הדרוש לכך(שולחנות, כסאות, מפות, כלים, פלטות, מאווררים, מחיצות, מזרונים, מצעים)",
+                "checked": false
+            },
+            {
+                "id": "task-task_g-16",
+                "text": "להשיג דירות לאורחים שישתתפו בשבת זו.",
+                "checked": false
+            }
+        ]
+    },
+    {
+        "categoryKey": "task_d",
+        "categoryTitle": "חודש לפני החתונה",
+        "tasks": [
+            {
+                "id": "task-task_d-1",
+                "text": "לסכם עם האולם על תפריט, עיצוב כיסא כלה ושולחנות, כיבוד בבר",
+                "checked": false
+            },
+            {
+                "id": "task-task_d-2",
+                "text": "לחפש דירה בשכירות",
+                "checked": false
+            },
+            {
+                "id": "task-task_d-3",
+                "text": "להשכיר זר מלאכותי לכלה (יש דברים מאוד יפים ממֵ שי) או להזמין זר חי",
+                "checked": false
+            },
+            {
+                "id": "task-task_d-4",
+                "text": "לתאם מלווה לכלה לשבוע האחרון לפני החתונה (לפי הנהוג)",
+                "checked": false
+            },
+            {
+                "id": "task-task_d-5",
+                "text": "להשיג נעליים לֵ בנות לחתונה מגמ\"ח",
+                "checked": false
+            },
+            {
+                "id": "task-task_d-6",
+                "text": "קניית כלי בית (רשימה בהמשך)",
+                "checked": false
+            }
+        ]
+    },
+    {
+        "categoryKey": "task_e",
+        "categoryTitle": "שבועיים לפני החתונה",
+        "tasks": [
+            {
+                "id": "task-task_e-1",
+                "text": "קניית מוצרי מכולת יבשים (רשימה בהמשך)",
+                "checked": false
+            },
+            {
+                "id": "task-task_e-2",
+                "text": "לשלוח הזמנות (עדיף למסור בסניף הדואר ולא בתיבות, כמו-כן אנשים שחשוב שיגיעו, עדיף לשלוח חודש לפניי).",
+                "checked": false
+            },
+            {
+                "id": "task-task_e-3",
+                "text": "לשכפל מפתח דירת הזוג 3 עותקים",
+                "checked": false
+            },
+            {
+                "id": "task-task_e-4",
+                "text": "העברת חפצים לדירה וסידורם",
+                "checked": false
+            },
+            {
+                "id": "task-task_e-5",
+                "text": "ניקיון הדירה וסידורה (פירוט בהמשך)",
+                "checked": false
+            },
+            {
+                "id": "task-task_e-6",
+                "text": "להגעיל ולהטביל כלים חדשים שנקנו",
+                "checked": false
+            }
+        ]
+    },
+    {
+        "categoryKey": "task_f",
+        "categoryTitle": "שבוע לפני החתונה",
+        "tasks": [
+            {
+                "id": "task-task_f-1",
+                "text": "להכין שלטים לקחת לאולם (כגון: שמור למשפחה, סוג הכשר, נשים/ גברים וכד')",
+                "checked": false
+            },
+            {
+                "id": "task-task_f-2",
+                "text": "להשאיל מגמ\"ח ערכה הכוללת כל האביזרים הדרושים לחופה כגון עששיות וכדומה",
+                "checked": false
+            },
+            {
+                "id": "task-task_f-3",
+                "text": "הכנות אחרונות בדירה (פירוט בהמשך)",
+                "checked": false
+            },
+            {
+                "id": "task-task_f-4",
+                "text": "להכין תיק חפצים לאולם (רשימה בהמשך)",
+                "checked": false
+            },
+            {
+                "id": "task-task_f-5",
+                "text": "להכין תיק חפצים לפי הרשימה שתנתן לך מהמדריכת כלות",
+                "checked": false
+            },
+            {
+                "id": "task-task_f-6",
+                "text": "למנות אחראית שתחזיר את החפצים לגמחי“ם למחרת החתונה, יש להכין רשימה מפורטת מראש של כל פריט להיכן להחזירו כולל שם משפחה כתובת ומס‘ טלפון.",
+                "checked": false
+            },
+            {
+                "id": "task-task_f-7",
+                "text": "קבוע מי יסיע את הזו\"צ לדירתם (הנהג ישאר לוודא שאכן נכנסו ולא שכחו את המפתח או בעיה אחרת)",
+                "checked": false
+            },
+            {
+                "id": "task-task_f-8",
+                "text": "למנות אחראית: לשמור על הכתובה עד למחרת החופה/ לארנק הצ'קים/ לתכשיטי הכלה/ לאיסוף המתנות.",
+                "checked": false
+            }
+        ]
+    }
+]

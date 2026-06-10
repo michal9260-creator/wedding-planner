@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>דף הבית של המשתמש</title>
+    <link rel="stylesheet" href="../style.css">
+    <link class="js-favicon" rel="icon" type="image/png" href="../pic/לוגו סמל.png">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <div class="page-wrapper">
+
+        <div class="Task_index">
+            <div class="index_top">
+                <h3 class="index_title">התקדמות כללית <span class="sparkle-icon">✨</span></h3>
+                <span class="percentage" id="Percentage_1">0%</span>
+            </div>
+            <div class="ruler">
+                <div class="progress_ruler" id="Fill"></div>
+            </div>
+            <div class="bottom-text">
+                <span id="Completed">0</span> מתוך <span id="Total">0</span> משימות הושלמו
+            </div>
+        </div>
+
+        <a href="pageHome.html">
+            <img src="../pic/topp.png" alt="לוגו האתר" class="top-logo">
+        </a>
+
+        <div class="form-box">
+            <div class="welcome-text">שלום, <span id="userNameDisplay">אורח</span></div>
+            <h1>בשעה טובה ובקלות!</h1>
+            <div class="subtitle">שמחים לראות אותך שוב במערכת.</div>
+            <div class="img-petek">
+                <img src="../pic/תזכורת2.png" alt="תזכורת" class="p-top">
+            </div>
+        </div>
+
+        <div class="tasks-section">
+            <h2>רשימת הכנות כלליות לחתונה</h2>
+            <div class="title-deco">
+                <span class="title-line"></span>
+                <span class="title-heart">♥</span>
+                <span class="title-line"></span>
+            </div>
+            <div id="categoriesContainer"></div>
+            <div class="more-lists">
+                <a href="#" class="btn-list">📋 לרשימות המלאות</a>
+            </div>
+        </div>
+
+        <div class="timer-container" id="timerBox" style="display: none;">
+            <div class="timer-icon">
+                <i data-lucide="calendar"></i>
+            </div>
+            <div class="timer-label">הזמן שנותר עד לאירוע:</div>
+            <div class="timer-grid">
+                <div class="timer-cell">
+                    <div class="timer-num" id="days">0</div>
+                    <div class="timer-unit">ימים</div>
+                </div>
+                <div class="timer-cell">
+                    <div class="timer-num" id="hours">0</div>
+                    <div class="timer-unit">שעות</div>
+                </div>
+                <div class="timer-cell">
+                    <div class="timer-num" id="minutes">0</div>
+                    <div class="timer-unit">דקות</div>
+                </div>
+                <div class="timer-cell">
+                    <div class="timer-num" id="seconds">0</div>
+                    <div class="timer-unit">שניות</div>
+                </div>
+            </div>
+            <div class="timer-tagline">הדרך שלכם מתחילה כאן ♥</div>
+        </div>
+
+        <div class="img-petek">
+            <img src="../pic/תזכורת3.png" alt="תזכורת" class="p-side-2">
+        </div>
+
+    </div>
+
+    <script src="../JS/script.js"></script>
+</body>
+
+</html>
