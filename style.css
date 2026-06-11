@@ -49,8 +49,14 @@ body {
     display: flex;
     justify-content: center;
     gap: 20px;
-    margin-top: 650px;
     font-family: sans-serif;
+    
+    /* קביעת מיקום קבוע על המסך */
+    position: fixed;
+    bottom: 40px; /* מרחק של 40 פיקסלים מתחתית המסך */
+    left: 50%;   /* ממקם את הקצה השמאלי במרכז המסך */
+    transform: translateX(-50%); /* מזיז חזרה חצי מרוחב האלמנט כדי שיהיה ממורכז בדיוק */
+    z-index: 1000; /* דואג שהכפתורים יהיו תמיד מעל שאר התוכן */
 }
 
 .btn {
