@@ -18,7 +18,7 @@ if (savedDataRaw) {
 
         function updateTimer() {
             const now = new Date().getTime();
-            const difference = targetDate - now;;
+            const difference = targetDate - now;
 
             if (difference <= 0) {
                 clearInterval(timerInterval);
@@ -34,7 +34,6 @@ if (savedDataRaw) {
             document.getElementById('hours').textContent = hours;
             document.getElementById('minutes').textContent = minutes;
             document.getElementById('seconds').textContent = seconds;
-
         }
 
         updateTimer();
@@ -58,7 +57,7 @@ function toggleCategory(categoryId) {
     }
 }
 
-// מילון האייקונים המעוצבים - מותאם באופן מדויק למחרוזות של ה-JSON שלך!
+// מילון האייקונים המעוצבים - נשאר בדיוק כפי שהגדרת ללא שינוי!
 function getIcon(key) {
     const map = {
         "hall": `<i data-lucide="gem"></i>`,
@@ -75,6 +74,9 @@ function getIcon(key) {
 async function init() {
     const container = document.getElementById('categoriesContainer');
     if (!container) return;
+
+    // בודק האם המיכל משתמש בקלאס הקצר grid (עמוד המשימות המפורטות)
+    const isDetailedPage = container.classList.contains('grid');
 
     const userRaw = localStorage.getItem('currentUser');
     if (!userRaw) return;
@@ -114,23 +116,46 @@ async function init() {
             // פתרון ה-undefined הראשי: קורא את שדה הכותרת האמיתי מה-JSON שלך
             const categoryName = cat.categoryTitle || "משימות";
 
-            // שליפת האייקון המתאים
+            // שליפת האייקון המתאים (לפי הפונקציה שלך)
             const icon = getIcon(cat.categoryKey);
-            // בניית המבנה הדינמי החדש שתואם פיקסל ל-CSS השלם
-            html += `
-            <div class="category-card">
-                <div class="card-header" onclick="toggleCategory('${index}')">
-                    <div class="icon-box">
-                        <span class="icon">${icon}</span>
+            
+            if (isDetailedPage) {
+                // --- מבנה פתוח לחלוטין אחד ליד השני עם כפתור הוספה (לעמוד המפורט) ---
+                html += `
+                <div class="category-card">
+                    <div class="card-header" style="cursor: default;">
+                        <div class="icon-box">
+                            <span class="icon">${icon}</span>
+                        </div>
+                        <h3 class="title">${categoryName}</h3>
                     </div>
-                    <h3 class="title">${categoryName}</h3>
-                    <span class="arrow" id="arrow-${index}">▼</span>
+                    <div class="category-content" id="content-${index}" style="display: flex; flex-direction: column;">
+                        <div class="tasks-list-container" id="list-${index}">
+                            ${tasksHtml}
+                        </div>
+                        <button class="add-task-btn" onclick="addNewTask('${index}')">
+                            <span class="plus-icon">+</span> הוסף משימה
+                        </button>
+                    </div>
                 </div>
-                <div class="category-content" id="content-${index}" style="display: none; flex-direction: column;">
-                    ${tasksHtml}
+                `;
+            } else {
+                // --- המבנה המקורי של דף הבית (נסגר ונפתח בלחיצה) ---
+                html += `
+                <div class="category-card">
+                    <div class="card-header" onclick="toggleCategory('${index}')">
+                        <div class="icon-box">
+                            <span class="icon">${icon}</span>
+                        </div>
+                        <h3 class="title">${categoryName}</h3>
+                        <span class="arrow" id="arrow-${index}">▼</span>
+                    </div>
+                    <div class="category-content" id="content-${index}" style="display: none; flex-direction: column;">
+                        ${tasksHtml}
+                    </div>
                 </div>
-            </div>
-            `;
+                `;
+            }
         });
 
         container.innerHTML = html;
@@ -138,7 +163,10 @@ async function init() {
     } catch (err) {
         console.error("שגיאה בטעינת קובץ המשימות:", err);
     }
-    lucide.createIcons();
+    
+    if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+    }
     updateProgress();
 }
 
@@ -167,7 +195,28 @@ function save() {
     updateProgress();
 }
 
-// 6. עדכון מד האחוזים והסרגל הדינמי
+// 6. פונקציה להוספת משימה חדשה (רצה רק בעמוד המפורט)
+function addNewTask(categoryIndex) {
+    const taskText = prompt("הזינו את שם המשימה החדשה:");
+    if (!taskText || taskText.trim() === "") return;
+
+    const listContainer = document.getElementById(`list-${categoryIndex}`);
+    if (!listContainer) return;
+
+    const uniqueId = 'custom_task_' + Date.now();
+
+    const newTaskHtml = `
+        <label class="todo-item">
+            <input type="checkbox" id="${uniqueId}" onchange="save()">
+            <span>${taskText.trim()}</span>
+        </label>
+    `;
+
+    listContainer.insertAdjacentHTML('beforeend', newTaskHtml);
+    save(); 
+}
+
+// 7. עדכון מד האחוזים והסרגל הדינמי
 function updateProgress() {
     const checkboxes = document.querySelectorAll('.todo-item input[type="checkbox"]');
     if (checkboxes.length === 0) return;

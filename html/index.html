@@ -48,7 +48,9 @@
             </div>
             <div id="categoriesContainer"></div>
             <div class="more-lists">
-                <a href="#" class="btn-list">📋 לרשימות המלאות</a>
+                <a href="lists.html" class="btn-list">
+                    <span>לרשימות המלאות</span>
+                    <span class="arrow-icon"></span> </a>
             </div>
         </div>
 
@@ -78,6 +80,32 @@
             <div class="timer-tagline">הדרך שלכם מתחילה כאן ♥</div>
         </div>
 
+        <div class="summary-container">
+            <div class="summary-header">
+                <div class="summary-icon">
+                    <i data-lucide="clipboard-check"></i>
+                </div>
+                <div class="summary-title">סיכום מהיר</div>
+            </div>
+            
+            <div class="summary-content">
+                <div class="summary-row">
+                    <div class="summary-num" id="totalTasksCount">0</div>
+                    <div class="summary-label">סך הכל משימות</div>
+                </div>
+                
+                <div class="summary-row divider">
+                    <div class="summary-num completed" id="completedTasksCount">0</div>
+                    <div class="summary-label">הושלמו</div>
+                </div>
+                
+                <div class="summary-row">
+                    <div class="summary-num pending" id="remainingTasksCount">0</div>
+                    <div class="summary-label">נותרו לביצוע</div>
+                </div>
+            </div>
+        </div>
+
         <div class="img-petek">
             <img src="../pic/תזכורת3.png" alt="תזכורת" class="p-side-2">
         </div>
@@ -85,6 +113,7 @@
     </div>
 
     <script src="../JS/script.js"></script>
+
 </body>
 
 </html>

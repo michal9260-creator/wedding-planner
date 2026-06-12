@@ -50,13 +50,17 @@ body {
     justify-content: center;
     gap: 20px;
     font-family: sans-serif;
-    
+
     /* קביעת מיקום קבוע על המסך */
     position: fixed;
-    bottom: 40px; /* מרחק של 40 פיקסלים מתחתית המסך */
-    left: 50%;   /* ממקם את הקצה השמאלי במרכז המסך */
-    transform: translateX(-50%); /* מזיז חזרה חצי מרוחב האלמנט כדי שיהיה ממורכז בדיוק */
-    z-index: 1000; /* דואג שהכפתורים יהיו תמיד מעל שאר התוכן */
+    bottom: 40px;
+    /* מרחק של 40 פיקסלים מתחתית המסך */
+    left: 50%;
+    /* ממקם את הקצה השמאלי במרכז המסך */
+    transform: translateX(-50%);
+    /* מזיז חזרה חצי מרוחב האלמנט כדי שיהיה ממורכז בדיוק */
+    z-index: 1000;
+    /* דואג שהכפתורים יהיו תמיד מעל שאר התוכן */
 }
 
 .btn {
@@ -71,11 +75,25 @@ body {
     display: inline-block;
 }
 
-.btn-primary { background-color: #7c8c83; color: #ffffff; }
-.btn-primary:hover { background-color: #7a9386; border-color: #7a9386; }
+.btn-primary {
+    background-color: #7c8c83;
+    color: #ffffff;
+}
 
-.btn-secondary { background-color: transparent; color: #7c8c83; border: 2px solid #7c8c83; }
-.btn-secondary:hover { background-color: rgba(143, 168, 155, 0.1); }
+.btn-primary:hover {
+    background-color: #7a9386;
+    border-color: #7a9386;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: #7c8c83;
+    border: 2px solid #7c8c83;
+}
+
+.btn-secondary:hover {
+    background-color: rgba(143, 168, 155, 0.1);
+}
 
 .form-card {
     padding: 30px 40px;
@@ -88,10 +106,21 @@ body {
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
 }
 
-label { display: block; font-size: 15px; color: #5b6b63; margin-bottom: 15px; }
-.row-flex { display: flex; gap: 20px; width: 100%; }
+label {
+    display: block;
+    font-size: 15px;
+    color: #5b6b63;
+    margin-bottom: 15px;
+}
 
-input, select {
+.row-flex {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+input,
+select {
     width: 100%;
     padding: 11px;
     border: 1px solid #8fa89b;
@@ -101,10 +130,25 @@ input, select {
     outline: none;
     transition: all 0.2s;
 }
-input:focus, select:focus { border-color: #5b6b63; background-color: #ffffff; }
 
-.link { display: block; margin-top: 20px; font-size: 15px; color: #7f968a; text-decoration: none; }
-.link a { color: #8fa89b; text-decoration: none; }
+input:focus,
+select:focus {
+    border-color: #5b6b63;
+    background-color: #ffffff;
+}
+
+.link {
+    display: block;
+    margin-top: 20px;
+    font-size: 15px;
+    color: #7f968a;
+    text-decoration: none;
+}
+
+.link a {
+    color: #8fa89b;
+    text-decoration: none;
+}
 
 /* ==========================================================================
    3. מד אחוזים עליון ויציב
@@ -128,9 +172,20 @@ input:focus, select:focus { border-color: #5b6b63; background-color: #ffffff; }
     margin-bottom: 12px;
 }
 
-.index_title { margin: 0; font-size: 15px; color: #5b6b63; }
-.sparkle-icon { color: #adc2b1; }
-.percentage { font-size: 18px; color: #5b6b63; }
+.index_title {
+    margin: 0;
+    font-size: 15px;
+    color: #5b6b63;
+}
+
+.sparkle-icon {
+    color: #adc2b1;
+}
+
+.percentage {
+    font-size: 18px;
+    color: #5b6b63;
+}
 
 .ruler {
     width: 100%;
@@ -159,14 +214,17 @@ input:focus, select:focus { border-color: #5b6b63; background-color: #ffffff; }
     text-align: center;
 }
 
-#Completed { font-weight: bold; color: #5b6b63; }
+#Completed {
+    font-weight: bold;
+    color: #5b6b63;
+}
 
 /* ==========================================================================
    4. לוגו עליון (צד שמאל באחוזים)
    ========================================================================== */
 .top-logo {
     position: absolute;
-    top: 5%;
+    top: 2%;
     left: 2%;
     width: 14%;
     min-width: 120px;
@@ -240,7 +298,10 @@ h1 {
     background: #c4913a55;
 }
 
-.title-heart { font-size: 20px; color: #c4913a; }
+.title-heart {
+    font-size: 20px;
+    color: #c4913a;
+}
 
 /* כרטיסיית קטגוריה (הפתק) */
 .category-card {
@@ -296,25 +357,101 @@ h1 {
     text-align: right;
 }
 
-.arrow { font-size: 12px; color: #8fa89b; }
-.category-content { padding: 20px; background: #ffffff; border-top: 1px dashed #e2e8f0; width: 100%; }
-.todo-item { display: flex; align-items: center; gap: 12px; font-size: 15px; color: #475569; cursor: pointer; margin-bottom: 12px; }
-.todo-item:last-child { margin-bottom: 0; }
-.todo-item input[type="checkbox"] { width: 18px; height: 18px; cursor: pointer; accent-color: #8fa89b; }
-.todo-item input[type="checkbox"]:checked~span { color: #5e7268; text-decoration: line-through; }
-
-.more-lists { text-align: center; margin: 25px 0; }
-.btn-list {
-    display: inline-block;
-    background: #adc2b1;
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    padding: 12px 24px;
-    border-radius: 25px;
-    transition: 0.2s ease;
+.arrow {
+    font-size: 12px;
+    color: #8fa89b;
 }
-.btn-list:hover { background: #8da191; transform: translateY(-2px); }
+
+.category-content {
+    padding: 20px;
+    background: #ffffff;
+    border-top: 1px dashed #e2e8f0;
+    width: 100%;
+}
+
+.todo-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 15px;
+    color: #475569;
+    cursor: pointer;
+    margin-bottom: 12px;
+}
+
+.todo-item:last-child {
+    margin-bottom: 0;
+}
+
+.todo-item input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: #8fa89b;
+}
+
+.todo-item input[type="checkbox"]:checked~span {
+    color: #5e7268;
+    text-decoration: line-through;
+}
+
+/* מיכל הכפתור - יוצר הפרדה ברורה מהמשימות */
+.more-lists {
+    text-align: center;
+    padding-top: 10px;
+    width: 100%;
+}
+
+/* כפתור בולט עם נוכחות שלא נעלמת בעין */
+.btn-list {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    /* מרווח מדויק בין הטקסט לחץ */
+    background-color: #ffffff;
+    /* רקע לבן נקי */
+    color: #866c2d;
+    /* טקסט בצבע חום-זית יוקרתי של הכותרות */
+    border: 2px solid #adc2b1;
+    /* מסגרת ירוקה עדינה */
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 12px 28px;
+    border-radius: 50px;
+    /* צורת קפסולה */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+    transition: all 0.25s ease;
+}
+
+/* --- יצירת החץ הדק והמעוצב בחום-זית --- */
+.arrow-icon {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-top: 2px solid #866c2d;
+    /* צבע חום-זית לחץ */
+    border-left: 2px solid #866c2d;
+    /* צבע חום-זית לחץ */
+    transform: rotate(-45deg);
+    /* מסובב את הזווית כדי שייראה כמו חץ שמאלה */
+    transition: transform 0.25s ease;
+}
+
+/* --- אפקט ריחוף מושלם --- */
+.btn-list:hover {
+    background-color: #fbf9f1;
+    /* הרקע הופך לשמנת חמימה בעדינות */
+    box-shadow: 0 6px 15px rgba(143, 168, 155, 0.15);
+    transform: translateY(-2px);
+    /* קפיצה קטנה למעלה */
+}
+
+/* כשהעכבר מעל הכפתור, החץ זז טיפה שמאלה באנימציה עדינה */
+.btn-list:hover .arrow-icon {
+    transform: rotate(-45deg) translateX(3px);
+}
 
 /* ==========================================================================
    7. תיבת הטיימר - צד ימין למטה (באחוזים ופיקסלים יציבים)
@@ -323,71 +460,360 @@ h1 {
     position: fixed;
     bottom: 20px;
     right: 4%;
-    width: 22%;           /* רוחב גמיש באחוזים התואם לקופסה שמעליו */
-    min-width: 250px;     /* מונע קריסה של הריבועים במסכים צרים */
-    max-width: 340px;     /* מונע גדילת יתר במסכים ענקיים */
+    width: 22%;
+    /* רוחב גמיש באחוזים התואם לקופסה שמעליו */
+    min-width: 250px;
+    /* מונע קריסה של הריבועים במסכים צרים */
+    max-width: 340px;
+    /* מונע גדילת יתר במסכים ענקיים */
     background: #ffffff;
     border-radius: 14px;
     border: 1px solid #c4913a;
     padding: 20px 15px;
     text-align: center;
+    opacity: 0.9;
     z-index: 5;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
-.timer-icon svg { width: 26px; height: 26px; stroke: #7c9b7e; stroke-width: 1.5; margin-bottom: 5px; }
-.timer-label { font-size: 14px; color: #7a8c82; margin-bottom: 12px; }
-.timer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin-bottom: 12px; }
+.timer-icon svg {
+    width: 26px;
+    height: 26px;
+    stroke: #7c9b7e;
+    stroke-width: 1.5;
+    margin-bottom: 5px;
+}
+
+.timer-label {
+    font-size: 14px;
+    color: #7a8c82;
+    margin-bottom: 12px;
+}
+
+.timer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+    margin-bottom: 12px;
+}
 
 .timer-cell {
-    background: #fafbfa;  
+    background: #fafbfa;
     padding: 6px 2px;
     border-radius: 8px;
     border: 1px solid #edf0ee;
 }
 
-.timer-num { font-size: 24px; font-weight: 700; color: #4a5e52; line-height: 1.1; }
-.timer-unit { font-size: 11px; color: #9aab9f; margin-top: 3px; }
-.timer-tagline { font-size: 13px; color: #c4913a; font-style: italic; font-weight: 500; margin-top: 5px; }
+.timer-num {
+    font-size: 24px;
+    font-weight: 700;
+    color: #4a5e52;
+    line-height: 1.1;
+}
+
+.timer-unit {
+    font-size: 11px;
+    color: #9aab9f;
+    margin-top: 3px;
+}
+
+.timer-tagline {
+    font-size: 13px;
+    color: #c4913a;
+    font-style: italic;
+    font-weight: 500;
+    margin-top: 5px;
+}
 
 /* ==========================================================================
    8. פתקי תמונות וקישוטים צדדיים
    ========================================================================== */
 .p-top {
     display: block;
-    min-width: 150px;        /* מונע ממנו להפוך לקטנטן */
+    min-width: 150px;
+    width: 70%;
     max-width: 220px;
     height: auto;
-    margin-top: 15px;
+    margin-top: 60px;
+    right: 3%;
+    opacity: 0.8;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.p-top:hover {
+    transform: scale(1.03) rotate(1deg);
 }
 
 .p-side-2 {
     display: block;
-    position: fixed;         /* שינוי ל-fixed כדי שיצוף במקום ולא יגלול עם הדף! */
-    bottom: 5%;              /* מרחק קבוע מהתחתית של המסך */
-    left: 4%;                /* מרחק קבוע מצד שמאל של המסך */
-    width: 15%;              /* רוחב באחוזים שיתכווץ במסכים קטנים */
-    min-width: 150px;        /* מונע ממנו להפוך לקטנטן */
-    max-width: 220px;        /* מונע ממנו להפוך לענק */
+    position: fixed;
+    /* שינוי ל-fixed כדי שיצוף במקום ולא יגלול עם הדף! */
+    bottom: 5%;
+    /* מרחק קבוע מהתחתית של המסך */
+    left: 4%;
+    /* מרחק קבוע מצד שמאל של המסך */
+    width: 15%;
+    /* רוחב באחוזים שיתכווץ במסכים קטנים */
+    min-width: 150px;
+    /* מונע ממנו להפוך לקטנטן */
+    max-width: 220px;
+    opacity: 0.8;
+    /* מונע ממנו להפוך לענק */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease;
-    z-index: 1;              /* שומר עליו בשכבה הנכונה */
+    /* שומר עליו בשכבה הנכונה */
 }
-.p-side-2:hover { transform: scale(1.03) rotate(1deg); }
+
+.p-side-2:hover {
+    transform: scale(1.03) rotate(1deg);
+}
+
+.tasks-page .timer-container {
+    position: absolute;
+    top: 10px;
+    right: 3%;
+    bottom: auto;
+    right: 4.5%;
+    width: 18%;
+    min-width: 250px;
+    max-width: 340px;
+    background: #ffffff;
+    border: 1px solid #c4913a;
+    border-radius: 14px;
+    padding: 20px;
+    opacity: 0.8;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+/* =======================================================
+   פריצת המיכל ופריסת הבלוקים כטבלה לכל רוחב המסך המלא (.grid)
+   ======================================================= */
+
+.grid {
+    display: grid;
+    /* יוצר עמודות קטנות ואחידות שמתרחבות באופן שווה */
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 30px;
+    align-items: start;
+
+    /* הפטנט שפורץ את גבולות המרכז ולוקח רוחב מסך מלא */
+    width: 90vw;
+    /* תופס 90% מרוחב חלון הדפדפן האמיתי */
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -45vw;
+    /* חצי מה-width במינוס כדי למרכז מחדש */
+    margin-right: -45vw;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    align-items: stretch;
+}
+
+/* הקטנת כרטיסיית המשימות עצמה */
+.grid .category-card {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    border: 1px solid #edf0ee;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* התאמת הכותרת של הבלוק המוקטן */
+.grid .card-header {
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #f4f6f4;
+}
+
+.grid .card-header .title {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.grid .icon-box {
+    width: 28px;
+    height: 28px;
+    font-size: 14px;
+}
+
+/* הקטנת רשימת המשימות הפנימית */
+.grid .tasks-list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+/* עיצוב והקטנת שורת משימה בודדת */
+.grid .todo-item {
+    font-size: 12.5px;
+    padding: 4px 2px;
+}
+
+/* הקטנה עדינה של הצ'קבוקסים עצמם */
+.grid .todo-item input[type="checkbox"] {
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+}
+
+/* עיצוב מוקטן לכפתור הוספת המשימה בתחתית */
+.grid .add-task-btn {
+    width: 100%;
+    background: none;
+    border: 1px dashed #c4913a;
+    padding: 8px;
+    font-size: 12px;
+    color: #7a8c82;
+    font-family: inherit;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    margin-top: 12px;
+}
+
+.grid .add-task-btn:hover {
+    background: #fafbfa;
+    color: #9aab9f;
+    border-color: #c4913a;
+}
+
+.grid .add-task-btn .plus-icon {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* כרטיס סיכום מהיר בצד שמאל */
+.summary-container {
+    position: absolute;
+    left: 4%;
+    bottom: 53%;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 22px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border: 1px solid #c4913a;
+    width: 15%;
+    opacity: 0.8;
+}
+
+.summary-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    border-bottom: 1px dashed  #c2d8ca;
+    padding-bottom: 10px;
+}
+
+.summary-icon {
+    color: #4a5e52;
+    /* ירוק זית כהה */
+    display: flex;
+    align-items: center;
+}
+
+.summary-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #4a5e52;
+}
+
+.summary-content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.summary-row.divider {
+    border-top: 1px solid #fcfcfc;
+    border-bottom: 1px solid #fcfcfc;
+    padding: 8px 0;
+}
+
+.summary-num {
+    font-size: 20px;
+    font-weight: 700;
+    color: #4a5e52;
+}
+
+.summary-num.completed {
+    color: #8da495;
+    /* ירוק רך למשימות שבוצעו */
+}
+
+.summary-num.pending {
+    color: #c4913a;
+}
+
+.summary-label {
+    font-size: 14px;
+    color: #7a8c82;
+}
+
+/* התאמה לרספונסיביות - במסכים קטנים (מובייל) הכרטיס יירד למטה ויישר למרכז בצורה יפה */
+@media (max-width: 1024px) {
+    .summary-container {
+        position: relative;
+        left: auto;
+        bottom: auto;
+        margin: 30px auto;
+        width: 90%;
+        max-width: 320px;
+    }
+        .timer-container {
+        position: relative;
+        left: auto;
+        bottom: auto;
+        margin: 30px auto;
+        width: 60%;
+        right: 0%;
+        max-width: 320px;
+    }
+    .tasks-page        .timer-container {
+        position: relative;
+        left: auto;
+        bottom: auto;
+        margin: 30px auto;
+        width: 60%;
+        right: 0%;
+        max-width: 320px;
+    }
+}
 
 /* ==========================================================================
    9. חוקי רספונסיביות והתכווצות (ללא שינוי סדר!)
    ========================================================================== */
 @media (max-width: 1200px) {
+
     /* כשהמסך נהיה צר יותר, המשימות באמצע יצטמצמו מעט כדי שלא ידרסו את הצדדים */
-    .tasks-section, .Task_index {
-        width: 32%; 
+    .tasks-section,
+    .Task_index {
+        width: 32%;
     }
 }
 
 @media (max-width: 850px) {
+
     /* במסכים קטנים מאוד (כמו טאבלטים/טלפונים) שבהם פיזית אין מקום, הפתקים הצידיים יעלמו */
-    .p-side-2, .img-petek {
-        display: none !important;
+    .p-side-2,
+    .img-petek {
+        display: none;
+    }
+    .form-box {
+        display: none;
     }
 }
