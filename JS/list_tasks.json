@@ -1,0 +1,303 @@
+[
+    {
+        "categoryKey": "apartment_a",
+        "categoryTitle": "הכנת הדירה -מרגע קבלת המפתח: ",
+        "tasks": [
+            {
+                "id": "task-apt-1",
+                "text": "לבדוק תקינות מערכות מים, גז, חשמל",
+                "checked": false
+            },
+            {
+                "id": "task-apt-2",
+                "text": "תאום הבאת ריהוט ומוצרי חשמל",
+                "checked": false
+            },
+            {
+                "id": "task-apt-3",
+                "text": " תאום עם טכנאי החברה",
+                "checked": false
+            },
+            {
+                "id": "task-apt-4",
+                "text": "ניקיון הדירה",
+                "checked": false
+            },
+            {
+                "id": "task-apt-5",
+                "text": "ריסוס (במידת הצורך)",
+                "checked": false
+            },
+            {
+                "id": "task-apt-6",
+                "text": "צביעת הקירות (אם צריך) ",
+                "checked": false
+            },
+            {
+                "id": "task-apt-7",
+                "text": "בדיקת מזוזות (אם צריך)",
+                "checked": false
+            },
+            {
+                "id": "task-apt-8",
+                "text": "לסדר בגדים/קניות בתוך הארונות",
+                "checked": false
+            },
+            {
+                "id": "task-apt-9",
+                "text": "להחליף נורות לא תקינות",
+                "checked": false
+            }
+        ]
+    },
+    {
+        "categoryKey": "apartment_b",
+        "categoryTitle": "הכנת הדירה -בשבוע שלפני החתונה:  ",
+        "tasks": [
+            {
+                "id": "task-aptB-1",
+                "text": "אוורור החדרים",
+                "checked": false
+            },
+            {
+                "id": "task-aptB-2",
+                "text": "לתלות מגבות ליד הכיורים",
+                "checked": false
+            },
+            {
+                "id": "task-aptB-3",
+                "text": "לפרוס מצעים",
+                "checked": false
+            },
+            {
+                "id": "task-aptB-4",
+                "text": "להכניס למקרר שתיה קלה",
+                "checked": false
+            },
+            {
+                "id": "task-aptB-5",
+                "text": " להכניס למקפיא מאפים קפואים, מוצרי סויה, ירקות קפואים, עוגה, לחמניות",
+                "checked": false
+            },
+            {
+                "id": "task-aptB-6",
+                "text": "סידור ציוד אישי בארונות",
+                "checked": false
+            },
+            {
+                "id": "task-aptB-7",
+                "text": " ניגוב רצפות",
+                "checked": false
+            }
+        ]
+    },
+    {
+        "categoryKey": "apartment_c",
+        "categoryTitle": "הכנת הדירה - ביום החתונה:",
+        "tasks": [
+            {
+                "id": "task-aptC-1",
+                "text": "לסדר מיני מתיקה על השולחן",
+                "checked": false
+            },
+            {
+                "id": "task-aptC-2",
+                "text": "לשים במקרר: ביצים, מוצרי חלב, פירות, ירקות, שתיה, וסלטים.",
+                "checked": false
+            },
+            {
+                "id": "task-aptC-3",
+                "text": "להשאיר אורות דלוקים בדירה ובבית של ההורים",
+                "checked": false
+            },
+            {
+                "id": "task-aptC-4",
+                "text": "להעביר לדירה חפצים אישיים אחרונים שנשארו, כגון: מברשת-שיער, חומצה פולית, ארנק, נעלי בית, שעון יד, תכשיטים, מוצרי טיפוח ואיפור.",
+                "checked": false
+            }
+        ]
+    },
+    {
+        "categoryKey": "shopping_a",
+        "categoryTitle": "קניות לחתונה-נדוניה:",
+        "tasks": [
+            {
+                "id": "task-aptD-1",
+                "text": "מגבות רחצה",
+                "checked": false
+            },
+            {
+                "id": "task-aptD-2",
+                "text": "מגבות ידיים",
+                "checked": false
+            },
+            {
+                "id": "task-aptD-3",
+                "text": "מגבות מטבח",
+                "checked": false
+            },
+            {
+                "id": "task-aptD-4",
+                "text": " שמיכות פוך",
+                "checked": false
+            },
+                        {
+                "id": "task-aptD-5",
+                "text": " שמיכות דקות לקיץ",
+                "checked": false
+            },
+                        {
+                "id": "task-aptD-6",
+                "text": " כריות",
+                "checked": false
+            },
+                        {
+                "id": "task-aptD-7",
+                "text": "מצעים",
+                "checked": false
+            },
+                        {
+                "id": "task-aptD-8",
+                "text": "מגיניי מזרון וכרית",
+                "checked": false
+            },
+                        {
+                "id": "task-aptD-9",
+                "text": "חלוקים לשבת וליום חול",
+                "checked": false
+            },
+                        {
+                "id": "task-aptD-10",
+                "text": "כותנות",
+                "checked": false
+            },
+                        {
+                "id": "task-aptD-11",
+                "text": "ביגוד לשבת וליום חול",
+                "checked": false
+            },
+                        {
+                "id": "task-aptD-12",
+                "text": "נעליים לשבת ויום חול",
+                "checked": false
+            },
+                        {
+                "id": "task-aptD-13",
+                "text": "גרביונים",
+                "checked": false
+            },
+                        {
+                "id": "task-aptD-14",
+                "text": "כסויי ראש לשבת, ליום חול ולשינה  ",
+                "checked": false
+            },
+                        {
+                "id": "task-aptD-15",
+                "text": "הלבשה אישית",
+                "checked": false
+            },
+                        {
+                "id": "task-aptD-16",
+                "text": "מעיל לחורף",
+                "checked": false
+            },
+                        {
+                "id": "task-aptD-17",
+                "text": "נעלי בית",
+                "checked": false
+            },
+                                    {
+                "id": "task-aptD-18",
+                "text": "מפה לשולחן שבת + מפית לחלות",
+                "checked": false
+            }
+        ]
+    },
+    {
+        "categoryKey": "shopping_b",
+        "categoryTitle": "קניות לחתונה-ריהוט ומוצרי חשמל:",
+        "tasks": [
+            {
+                "id": "task-aptE-1",
+                "text": "מקרר (עם הכשר של משמרת השבת)",
+                "checked": false
+            },
+            {
+                "id": "task-aptE-2",
+                "text": "תנור (הכשר על הפרדה בין התאים)",
+                "checked": false
+            },
+            {
+                "id": "task-aptE-3",
+                "text": "מכונת כביסה",
+                "checked": false
+            },
+            {
+                "id": "task-aptE-4",
+                "text": "ארון ספרים / עמודונים (מדפי ספרים)",
+                "checked": false
+            },
+                        {
+                "id": "task-aptE-5",
+                "text": "שולחן לחדר ספרים וכסאות",
+                "checked": false
+            },
+                        {
+                "id": "task-aptE-6",
+                "text": " שולחן קטן למטבח וכסאות",
+                "checked": false
+            },
+                        {
+                "id": "task-aptE-7",
+                "text": "חדר שינה (ארון עם מראה, מיטות, שידה)",
+                "checked": false
+            },
+                        {
+                "id": "task-aptE-8",
+                "text": "מעבד מזון",
+                "checked": false
+            },
+                        {
+                "id": "task-aptE-9",
+                "text": "טוסטר אובן /מיקרוגל",
+                "checked": false
+            },
+                        {
+                "id": "task-aptE-10",
+                "text": "קומקום חשמלי",
+                "checked": false
+            },
+                        {
+                "id": "task-aptE-11",
+                "text": "מגהץ וקרש גיהוץ",
+                "checked": false
+            },
+                        {
+                "id": "task-aptE-12",
+                "text": "פלטה חשמלית",
+                "checked": false
+            },
+                        {
+                "id": "task-aptE-13",
+                "text": "מאוורר",
+                "checked": false
+            },
+                        {
+                "id": "task-aptE-14",
+                "text": "תנור חימום",
+                "checked": false
+            },
+                        {
+                "id": "task-aptE-15",
+                "text": "תנור לאמבטיה",
+                "checked": false
+            },
+                        {
+                "id": "task-aptE-16",
+                "text": "אם קונים ספה כדאי כזו שנפתחת למיטה",
+                "checked": false
+            }
+
+        ]
+    }
+]

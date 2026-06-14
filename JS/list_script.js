@@ -1,5 +1,5 @@
 // =======================================================
-// קובץ JS מלא עבור עמוד הבית (גרסה מקורית)
+// קובץ JS מלא עבור עמוד המשימות המפורטות (גרסה מקורית)
 // =======================================================
 
 const savedDataRaw = localStorage.getItem('currentUser');
@@ -32,10 +32,15 @@ if (savedDataRaw) {
             const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
-            document.getElementById('days').textContent = days;
-            document.getElementById('hours').textContent = hours;
-            document.getElementById('minutes').textContent = minutes;
-            document.getElementById('seconds').textContent = seconds;
+            const dEl = document.getElementById('days');
+            const hEl = document.getElementById('hours');
+            const mEl = document.getElementById('minutes');
+            const sEl = document.getElementById('seconds');
+
+            if (dEl) dEl.textContent = days;
+            if (hEl) hEl.textContent = hours;
+            if (mEl) mEl.textContent = minutes;
+            if (sEl) sEl.textContent = seconds;
         }
 
         updateTimer();
@@ -65,7 +70,8 @@ function getIcon(key) {
         "task_g": `<i data-lucide="heart"></i>`,
         "task_d": `<i data-lucide="calendar"></i>`,
         "task_e": `<i data-lucide="bell"></i>`,
-        "task_f": `<i data-lucide="sparkles"></i>`
+        "task_f": `<i data-lucide="sparkles"></i>`,
+        "apartment": `<i data-lucide="home"></i>`
     };
     return map[key] || `<i data-lucide="check-circle"></i>`;
 }
@@ -80,81 +86,98 @@ async function init() {
     if (!userRaw) return;
     const email = JSON.parse(userRaw).email;
 
-    try {
-        const response = await fetch('../JS/tasks.json');
-        const categories = await response.json();
-
-        const savedRaw = localStorage.getItem('userTasksState_' + email);
-        let savedData = savedRaw ? JSON.parse(savedRaw) : null;
-
-        let html = '';
-
-        categories.forEach((cat, index) => {
-            let tasksHtml = '';
-
-            if (cat.tasks && Array.isArray(cat.tasks)) {
-                cat.tasks.forEach(task => {
-                    let isChecked = false;
-                    if (savedData) {
-                        const found = savedData.find(t => t.id === task.id);
-                        if (found) isChecked = found.checked;
-                    }
-
-                    tasksHtml += `
-                        <label class="todo-item">
-                            <input type="checkbox" id="${task.id}" ${isChecked ? 'checked' : ''} onchange="save()">
-                            <span>${task.text}</span>
-                        </label>
-                    `;
-                });
+    let categories = [];
+    const pathsToTry = ['../js/list_tasks.json', '../JS/list_tasks.json', './js/list_tasks.json', 'list_tasks.json'];
+    
+    for (let path of pathsToTry) {
+        try {
+            const response = await fetch(path);
+            if (response.ok) {
+                categories = await response.json();
+                break;
             }
+        } catch (e) {}
+    }
 
-            const categoryName = cat.categoryTitle || "משימות";
-            const icon = getIcon(cat.categoryKey);
-            
-            if (isDetailedPage) {
-                html += `
-                <div class="category-card">
-                    <div class="card-header" style="cursor: default;">
-                        <div class="icon-box">
-                            <span class="icon">${icon}</span>
-                        </div>
-                        <h3 class="title">${categoryName}</h3>
-                    </div>
-                    <div class="category-content" id="content-${index}" style="display: flex; flex-direction: column;">
-                        <div class="tasks-list-container" id="list-${index}">
-                            ${tasksHtml}
-                        </div>
-                        <button class="add-task-btn" onclick="addNewTask('${index}')">
-                            <span class="plus-icon">+</span> הוסף משימה
-                        </button>
-                    </div>
-                </div>
+    if (!categories || categories.length === 0) {
+        categories = [
+            {
+                "categoryKey": "apartment",
+                "categoryTitle": "הכנת דירה",
+                "tasks": [
+                    { "id": "check_json_file", "text": "יש לבדוק את תקינות קובץ ה-JSON" }
+                ]
+            }
+        ];
+    }
+
+    const savedRaw = localStorage.getItem('userTasks_v2_' + email);
+    let savedData = savedRaw ? JSON.parse(savedRaw) : null;
+
+    let html = '';
+
+    categories.forEach((cat, index) => {
+        let tasksHtml = '';
+
+        if (cat.tasks && Array.isArray(cat.tasks)) {
+            cat.tasks.forEach(task => {
+                let isChecked = false;
+                if (savedData) {
+                    const found = savedData.find(t => t.id === task.id);
+                    if (found) isChecked = found.checked;
+                }
+
+                tasksHtml += `
+                    <label class="todo-item">
+                        <input type="checkbox" id="${task.id}" ${isChecked ? 'checked' : ''} onchange="save()">
+                        <span>${task.text}</span>
+                    </label>
                 `;
-            } else {
-                html += `
-                <div class="category-card">
-                    <div class="card-header" onclick="toggleCategory('${index}')">
-                        <div class="icon-box">
-                            <span class="icon">${icon}</span>
-                        </div>
-                        <h3 class="title">${categoryName}</h3>
-                        <span class="arrow" id="arrow-${index}">▼</span>
+            });
+        }
+
+        const categoryName = cat.categoryTitle || "משימות";
+        const icon = getIcon(cat.categoryKey);
+
+        if (isDetailedPage) {
+            html += `
+            <div class="category-card">
+                <div class="card-header" style="cursor: default;">
+                    <div class="icon-box">
+                        <span class="icon">${icon}</span>
                     </div>
-                    <div class="category-content" id="content-${index}" style="display: none; flex-direction: column;">
+                    <h3 class="title">${categoryName}</h3>
+                </div>
+                <div class="category-content" id="content-${index}" style="display: flex; flex-direction: column;">
+                    <div class="tasks-list-container" id="list-${index}">
                         ${tasksHtml}
                     </div>
+                    <button class="add-task-btn" onclick="addNewTask('${index}')">
+                        <span class="plus-icon">+</span> הוסף משימה
+                    </button>
                 </div>
-                `;
-            }
-        });
+            </div>
+            `;
+        } else {
+            html += `
+            <div class="category-card">
+                <div class="card-header" onclick="toggleCategory('${index}')">
+                    <div class="icon-box">
+                        <span class="icon">${icon}</span>
+                    </div>
+                    <h3 class="title">${categoryName}</h3>
+                    <span class="arrow" id="arrow-${index}">▼</span>
+                </div>
+                <div class="category-content" id="content-${index}" style="display: none; flex-direction: column;">
+                    ${tasksHtml}
+                </div>
+            </div>
+            `;
+        }
+    });
 
-        container.innerHTML = html;
+    container.innerHTML = html;
 
-    } catch (err) {
-        console.error("שגיאה בטעינת קובץ המשימות:", err);
-    }
-    
     if (typeof lucide !== 'undefined') {
         lucide.createIcons();
     }
@@ -181,7 +204,7 @@ function save() {
         }
     });
 
-    localStorage.setItem('userTasksState_' + email, JSON.stringify(tasksList));
+    localStorage.setItem('userTasks_v2_' + email, JSON.stringify(tasksList));
     updateProgress();
 }
 
@@ -202,7 +225,7 @@ function addNewTask(categoryIndex) {
     `;
 
     listContainer.insertAdjacentHTML('beforeend', newTaskHtml);
-    save(); 
+    save();
 }
 
 function updateProgress() {

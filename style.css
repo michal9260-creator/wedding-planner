@@ -278,7 +278,7 @@ h1 {
 .tasks-section h2 {
     color: #ba8832;
     font-size: 22px;
-    margin-bottom: 8px;
+    margin-bottom: 2px;
     text-align: center;
     font-weight: 600;
 }
@@ -288,7 +288,7 @@ h1 {
     align-items: center;
     justify-content: center;
     gap: 8px;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
 }
 
 .title-line {
@@ -543,30 +543,26 @@ h1 {
 
 .p-top:hover {
     transform: scale(1.03) rotate(1deg);
+    opacity: 1;
 }
 
 .p-side-2 {
     display: block;
     position: fixed;
-    /* שינוי ל-fixed כדי שיצוף במקום ולא יגלול עם הדף! */
     bottom: 5%;
-    /* מרחק קבוע מהתחתית של המסך */
     left: 4%;
-    /* מרחק קבוע מצד שמאל של המסך */
     width: 15%;
-    /* רוחב באחוזים שיתכווץ במסכים קטנים */
     min-width: 150px;
-    /* מונע ממנו להפוך לקטנטן */
     max-width: 220px;
     opacity: 0.8;
-    /* מונע ממנו להפוך לענק */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease;
-    /* שומר עליו בשכבה הנכונה */
 }
 
 .p-side-2:hover {
     transform: scale(1.03) rotate(1deg);
+        opacity: 1;
+
 }
 
 .tasks-page .timer-container {
