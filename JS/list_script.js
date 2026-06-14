@@ -93,8 +93,7 @@ async function init() {
     const email = JSON.parse(userRaw).email;
 
     let categories = [];
-    const pathsToTry = ['../js/list_tasks.json', '../JS/list_tasks.json', './js/list_tasks.json', 'list_tasks.json'];
-
+const pathsToTry = ['./js/list_tasks.json', 'js/list_tasks.json', 'list_tasks.json'];
     for (let path of pathsToTry) {
         try {
             const response = await fetch(path);
