@@ -220,11 +220,11 @@ select:focus {
 }
 
 /* ==========================================================================
-   4. לוגו עליון (צד שמאל באחוזים)
+4. לוגו עליון (צד שמאל באחוזים)
    ========================================================================== */
 .top-logo {
     position: absolute;
-    top: 2%;
+    top: 1%;
     left: 2%;
     width: 14%;
     min-width: 120px;
@@ -233,7 +233,7 @@ select:focus {
 }
 
 /* ==========================================================================
-   5. תיבת ברוכים הבאים - צד ימין למעלה
+5. תיבת ברוכים הבאים - צד ימין למעלה
    ========================================================================== */
 .form-box {
     position: fixed;
@@ -526,7 +526,7 @@ h1 {
 }
 
 /* ==========================================================================
-   8. פתקי תמונות וקישוטים צדדיים
+8. פתקי תמונות וקישוטים צדדיים
    ========================================================================== */
 .p-top {
     display: block;
@@ -561,7 +561,7 @@ h1 {
 
 .p-side-2:hover {
     transform: scale(1.03) rotate(1deg);
-        opacity: 1;
+    opacity: 1;
 
 }
 
@@ -583,7 +583,7 @@ h1 {
 }
 
 /* =======================================================
-   פריצת המיכל ופריסת הבלוקים כטבלה לכל רוחב המסך המלא (.grid)
+ פריצת המיכל ופריסת הבלוקים כטבלה לכל רוחב המסך המלא (.grid)
    ======================================================= */
 
 .grid {
@@ -631,8 +631,8 @@ h1 {
 }
 
 .grid .icon-box {
-    width: 28px;
-    height: 28px;
+    width: 36px;
+    height: 36px;
     font-size: 14px;
 }
 
@@ -705,7 +705,7 @@ h1 {
     align-items: center;
     gap: 10px;
     margin-bottom: 15px;
-    border-bottom: 1px dashed  #c2d8ca;
+    border-bottom: 1px dashed #c2d8ca;
     padding-bottom: 10px;
 }
 
@@ -770,7 +770,8 @@ h1 {
         width: 90%;
         max-width: 320px;
     }
-        .timer-container {
+
+    .timer-container {
         position: relative;
         left: auto;
         bottom: auto;
@@ -779,7 +780,8 @@ h1 {
         right: 0%;
         max-width: 320px;
     }
-    .tasks-page        .timer-container {
+
+    .tasks-page .timer-container {
         position: relative;
         left: auto;
         bottom: auto;
@@ -809,6 +811,7 @@ h1 {
     .img-petek {
         display: none;
     }
+
     .form-box {
         display: none;
     }

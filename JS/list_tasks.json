@@ -141,72 +141,72 @@
                 "text": " שמיכות פוך",
                 "checked": false
             },
-                        {
+            {
                 "id": "task-aptD-5",
                 "text": " שמיכות דקות לקיץ",
                 "checked": false
             },
-                        {
+            {
                 "id": "task-aptD-6",
                 "text": " כריות",
                 "checked": false
             },
-                        {
+            {
                 "id": "task-aptD-7",
                 "text": "מצעים",
                 "checked": false
             },
-                        {
+            {
                 "id": "task-aptD-8",
                 "text": "מגיניי מזרון וכרית",
                 "checked": false
             },
-                        {
+            {
                 "id": "task-aptD-9",
                 "text": "חלוקים לשבת וליום חול",
                 "checked": false
             },
-                        {
+            {
                 "id": "task-aptD-10",
                 "text": "כותנות",
                 "checked": false
             },
-                        {
+            {
                 "id": "task-aptD-11",
                 "text": "ביגוד לשבת וליום חול",
                 "checked": false
             },
-                        {
+            {
                 "id": "task-aptD-12",
                 "text": "נעליים לשבת ויום חול",
                 "checked": false
             },
-                        {
+            {
                 "id": "task-aptD-13",
                 "text": "גרביונים",
                 "checked": false
             },
-                        {
+            {
                 "id": "task-aptD-14",
                 "text": "כסויי ראש לשבת, ליום חול ולשינה  ",
                 "checked": false
             },
-                        {
+            {
                 "id": "task-aptD-15",
                 "text": "הלבשה אישית",
                 "checked": false
             },
-                        {
+            {
                 "id": "task-aptD-16",
                 "text": "מעיל לחורף",
                 "checked": false
             },
-                        {
+            {
                 "id": "task-aptD-17",
                 "text": "נעלי בית",
                 "checked": false
             },
-                                    {
+            {
                 "id": "task-aptD-18",
                 "text": "מפה לשולחן שבת + מפית לחלות",
                 "checked": false
@@ -237,67 +237,518 @@
                 "text": "ארון ספרים / עמודונים (מדפי ספרים)",
                 "checked": false
             },
-                        {
+            {
                 "id": "task-aptE-5",
                 "text": "שולחן לחדר ספרים וכסאות",
                 "checked": false
             },
-                        {
+            {
                 "id": "task-aptE-6",
                 "text": " שולחן קטן למטבח וכסאות",
                 "checked": false
             },
-                        {
+            {
                 "id": "task-aptE-7",
                 "text": "חדר שינה (ארון עם מראה, מיטות, שידה)",
                 "checked": false
             },
-                        {
+            {
                 "id": "task-aptE-8",
                 "text": "מעבד מזון",
                 "checked": false
             },
-                        {
+            {
                 "id": "task-aptE-9",
                 "text": "טוסטר אובן /מיקרוגל",
                 "checked": false
             },
-                        {
+            {
                 "id": "task-aptE-10",
                 "text": "קומקום חשמלי",
                 "checked": false
             },
-                        {
+            {
                 "id": "task-aptE-11",
                 "text": "מגהץ וקרש גיהוץ",
                 "checked": false
             },
-                        {
+            {
                 "id": "task-aptE-12",
                 "text": "פלטה חשמלית",
                 "checked": false
             },
-                        {
+            {
                 "id": "task-aptE-13",
                 "text": "מאוורר",
                 "checked": false
             },
-                        {
+            {
                 "id": "task-aptE-14",
                 "text": "תנור חימום",
                 "checked": false
             },
-                        {
+            {
                 "id": "task-aptE-15",
                 "text": "תנור לאמבטיה",
                 "checked": false
             },
-                        {
+            {
                 "id": "task-aptE-16",
                 "text": "אם קונים ספה כדאי כזו שנפתחת למיטה",
                 "checked": false
             }
-
+        ]
+    },
+    {
+        "categoryKey": "shopping_c",
+        "categoryTitle": "קניות לחתונה-מצרכי מזון:",
+        "tasks": [
+            {
+                "id": "task-aptf-1",
+                "text": "סוכר",
+                "checked": false
+            },
+            {
+                "id": "task-aptf-2",
+                "text": "קפה",
+                "checked": false
+            },
+            {
+                "id": "task-aptf-3",
+                "text": "תה",
+                "checked": false
+            },
+            {
+                "id": "task-aptf-4",
+                "text": "קקאו",
+                "checked": false
+            },
+            {
+                "id": "task-aptf-5",
+                "text": "סוכרזית",
+                "checked": false
+            },
+            {
+                "id": "task-aptf-6",
+                "text": "מלח",
+                "checked": false
+            },
+            {
+                "id": "task-aptf-7",
+                "text": "תבלינים",
+                "checked": false
+            },
+            {
+                "id": "task-aptf-8",
+                "text": "אבקת מרק",
+                "checked": false
+            },
+            {
+                "id": "task-aptf-9",
+                "text": "קמח",
+                "checked": false
+            },
+            {
+                "id": "task-aptf-10",
+                "text": "אבקת אפיה",
+                "checked": false
+            },
+            {
+                "id": "task-aptf-11",
+                "text": "פרורי לחם",
+                "checked": false
+            },
+            {
+                "id": "task-aptf-12",
+                "text": "קמח מצה",
+                "checked": false
+            },
+            {
+                "id": "task-aptf-13",
+                "text": "קטשופ",
+                "checked": false
+            },
+            {
+                "id": "task-aptf-14",
+                "text": "מיונז",
+                "checked": false
+            },
+            {
+                "id": "task-aptf-15",
+                "text": "חרדל",
+                "checked": false
+            },
+            {
+                "id": "task-aptf-16",
+                "text": "רסק עגבניות",
+                "checked": false
+            },
+            {
+                "id": "task-aptf-17",
+                "text": "חומץ",
+                "checked": false
+            },
+            {
+                "id": "task-aptf-18",
+                "text": "שמן",
+                "checked": false
+            },
+            {
+                "id": "task-aptf-19",
+                "text": "רוטב פטריות",
+                "checked": false
+            },
+            {
+                "id": "task-aptf-20",
+                "text": "סודה לשתיה",
+                "checked": false
+            },
+            {
+                "id": "task-aptf-21",
+                "text": "זיתים",
+                "checked": false
+            },
+            {
+                "id": "task-aptf-22",
+                "text": "תירס",
+                "checked": false
+            },
+            {
+                "id": "task-aptf-23",
+                "text": "מלפפון חמוץ",
+                "checked": false
+            },
+            {
+                "id": "task-aptf-24",
+                "text": "מיץ לימון",
+                "checked": false
+            },
+            {
+                "id": "task-aptf-25",
+                "text": "קטניות",
+                "checked": false
+            },
+            {
+                "id": "task-aptf-26",
+                "text": "ממתקים",
+                "checked": false
+            },
+            {
+                "id": "task-aptf-27",
+                "text": "עוגיות",
+                "checked": false
+            },
+            {
+                "id": "task-aptf-28",
+                "text": "ממרחים",
+                "checked": false
+            },
+            {
+                "id": "task-aptf-29",
+                "text": "פתיתים",
+                "checked": false
+            },
+            {
+                "id": "task-aptf-30",
+                "text": "איטריות",
+                "checked": false
+            },
+            {
+                "id": "task-aptf-31",
+                "text": "שתיה",
+                "checked": false
+            },
+            {
+                "id": "task-aptf-32",
+                "text": "דגני בוקר",
+                "checked": false
+            }
+        ]
+    },
+        {
+        "categoryKey": "shopping_d",
+        "categoryTitle": "קניות לחתונה-כלי בית :",
+        "tasks": [
+            {
+                "id": "task-aptg-1",
+                "text": "מחזיק סכו“ם X2",
+                "checked": false
+            },
+            {
+                "id": "task-aptg-2",
+                "text": "צלחות וכוסות X2",
+                "checked": false
+            },
+            {
+                "id": "task-aptg-3",
+                "text": "סכו“ם X2",
+                "checked": false
+            },
+            {
+                "id": "task-aptg-4",
+                "text": "לפתניות",
+                "checked": false
+            },
+            {
+                "id": "task-aptg-5",
+                "text": "כוסיות ליין",
+                "checked": false
+            },
+            {
+                "id": "task-aptg-6",
+                "text": "מספריים או סכין מיוחדים לחיתוך עוף ובשר",
+                "checked": false
+            },
+            {
+                "id": "task-aptg-7",
+                "text": "מחבת",
+                "checked": false
+            },
+            {
+                "id": "task-aptg-8",
+                "text": "סיר גדול וסיר קטן",
+                "checked": false
+            },
+            {
+                "id": "task-aptg-9",
+                "text": "סיר לביצים",
+                "checked": false
+            },
+            {
+                "id": "task-aptg-10",
+                "text": "סכין חדה לחיתוך X2",
+                "checked": false
+            },
+            {
+                "id": "task-aptg-11",
+                "text": "מקלף X2",
+                "checked": false
+            },
+            {
+                "id": "task-aptg-12",
+                "text": " קרש חיתוך לירקות X2",
+                "checked": false
+            },
+            {
+                "id": "task-aptg-13",
+                "text": "מצקת, כף גדולה, כף טיגון, כף מחוררת X2",
+                "checked": false
+            },
+            {
+                "id": "task-aptg-14",
+                "text": "מגרדת-פומפיה",
+                "checked": false
+            },
+            {
+                "id": "task-aptg-15",
+                "text": "קופסאות אחסון",
+                "checked": false
+            },
+            {
+                "id": "task-aptg-16",
+                "text": "פותחן לקופסאות לשימורים",
+                "checked": false
+            },
+            {
+                "id": "task-aptg-17",
+                "text": "תחתית לסירים חמים X2",
+                "checked": false
+            },
+            {
+                "id": "task-aptg-18",
+                "text": "כד לחלב",
+                "checked": false
+            },
+            {
+                "id": "task-aptg-19",
+                "text": " בלאך (פח לכיריים)",
+                "checked": false
+            },
+            {
+                "id": "task-aptg-20",
+                "text": "מלחייה",
+                "checked": false
+            },
+            {
+                "id": "task-aptg-21",
+                "text": "פומפה",
+                "checked": false
+            },
+            {
+                "id": "task-aptg-22",
+                "text": "כפפות מטבח",
+                "checked": false
+            },
+                        {
+                "id": "task-aptg-23",
+                "text": " עגלת סלסלאות לירקות ופרות",
+                "checked": false
+            },
+            {
+                "id": "task-aptg-24",
+                "text": "קנקן שתיה",
+                "checked": false
+            },
+            {
+                "id": "task-aptg-25",
+                "text": "ספלים לקפה",
+                "checked": false
+            },
+            {
+                "id": "task-aptg-26",
+                "text": "קערות בגדלים שונים (כדאי שנכנסות זו בתוך זו)",
+                "checked": false
+            },
+            {
+                "id": "task-aptg-27",
+                "text": "מסננת אטריות",
+                "checked": false
+            },
+            {
+                "id": "task-aptg-28",
+                "text": "נפת קמח",
+                "checked": false
+            },
+                        {
+                "id": "task-aptg-29",
+                "text": "ספל לנטילת ידיים",
+                "checked": false
+            },
+            {
+                "id": "task-aptg-30",
+                "text": "קערה ונטלה לנטילת ידיים",
+                "checked": false
+            },
+            {
+                "id": "task-aptg-31",
+                "text": "מגב לשיש X2",
+                "checked": false
+            },
+            {
+                "id": "task-aptg-32",
+                "text": "כותש שום X2",
+                "checked": false
+            },
+            {
+                "id": "task-aptg-33",
+                "text": "מטאטא ויעה",
+                "checked": false
+            },
+            {
+                "id": "task-aptg-34",
+                "text": "מגב ודלי",
+                "checked": false
+            },
+                        {
+                "id": "task-aptg-35",
+                "text": "פח אשפה למטבח",
+                "checked": false
+            },
+                        {
+                "id": "task-aptg-36",
+                "text": "משולש לכיור X2",
+                "checked": false
+            },
+                        {
+                "id": "task-aptg-37",
+                "text": "מפת פלסטיק לשולחן הבשרי ",
+                "checked": false
+            },
+                        {
+                "id": "task-aptg-38",
+                "text": " סל לבגדים לכיבוס",
+                "checked": false
+            },
+                        {
+                "id": "task-aptg-39",
+                "text": "מצית לכריים ",
+                "checked": false
+            },
+                        {
+                "id": "task-aptg-40",
+                "text": "מגש",
+                "checked": false
+            },
+                                    {
+                "id": "task-aptg-41",
+                "text": "מערוך",
+                "checked": false
+            },
+                                    {
+                "id": "task-aptg-42",
+                "text": "תיון",
+                "checked": false
+            },
+                                    {
+                "id": "task-aptg-43",
+                "text": "טרמוס",
+                "checked": false
+            },
+                                    {
+                "id": "task-aptg-44",
+                "text": "קומקום",
+                "checked": false
+            },
+                                    {
+                "id": "task-aptg-45",
+                "text": "פטיש לשניצל",
+                "checked": false
+            },
+                                    {
+                "id": "task-aptg-46",
+                "text": "מחבט מזרונים",
+                "checked": false
+            },
+                                    {
+                "id": "task-aptg-47",
+                "text": "גיגית לכביסה",
+                "checked": false
+            },
+                                    {
+                "id": "task-aptg-48",
+                "text": "כלי לחמאה",
+                "checked": false
+            },
+                                                {
+                "id": "task-aptg-49",
+                "text": "קרש חיתוך ללחם",
+                "checked": false
+            },
+                                                {
+                "id": "task-aptg-50",
+                "text": "מסחטת פירות",
+                "checked": false
+            },
+                                                {
+                "id": "task-aptg-51",
+                "text": "מחזיק למפיות",
+                "checked": false
+            },
+                                                {
+                "id": "task-aptg-52",
+                "text": "אבן משחזת לסכינים",
+                "checked": false
+            },
+                                                {
+                "id": "task-aptg-53",
+                "text": "כלי לסוכר",
+                "checked": false
+            },
+                                                {
+                "id": "task-aptg-54",
+                "text": "מתקן לתליית כביסה",
+                "checked": false
+            },
+                                                {
+                "id": "task-aptg-55",
+                "text": "סוגרי אריזות/גומיות",
+                "checked": false
+            },
+                                                {
+                "id": "task-aptg-56",
+                "text": "פותחן בקבוקים",
+                "checked": false
+            }
         ]
     }
 ]

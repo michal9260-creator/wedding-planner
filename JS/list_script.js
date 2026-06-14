@@ -71,7 +71,13 @@ function getIcon(key) {
         "task_d": `<i data-lucide="calendar"></i>`,
         "task_e": `<i data-lucide="bell"></i>`,
         "task_f": `<i data-lucide="sparkles"></i>`,
-        "apartment": `<i data-lucide="home"></i>`
+        "apartment_a": `<i data-lucide="home"></i>`,
+        "apartment_b": `<i data-lucide="home"></i>`,
+        "apartment_c": `<i data-lucide="home"></i>`,
+        "shopping_a": `<i data-lucide="shopping-bag"></i>`,
+        "shopping_b": `<i data-lucide="plug"></i>`,
+        "shopping_c": `<i data-lucide="shopping-cart"></i>`,
+        "shopping_d": `<i data-lucide="utensils"></i>`
     };
     return map[key] || `<i data-lucide="check-circle"></i>`;
 }
@@ -88,7 +94,7 @@ async function init() {
 
     let categories = [];
     const pathsToTry = ['../js/list_tasks.json', '../JS/list_tasks.json', './js/list_tasks.json', 'list_tasks.json'];
-    
+
     for (let path of pathsToTry) {
         try {
             const response = await fetch(path);
@@ -96,7 +102,7 @@ async function init() {
                 categories = await response.json();
                 break;
             }
-        } catch (e) {}
+        } catch (e) { }
     }
 
     if (!categories || categories.length === 0) {
