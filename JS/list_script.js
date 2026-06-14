@@ -1,5 +1,5 @@
 // =======================================================
-// קובץ JS מלא עבור עמוד המשימות המפורטות (גרסה מקורית)
+// קובץ JS מלא עבור עמוד המשימות המפורטות (גרסת בדיקה ושגיאות)
 // =======================================================
 
 const savedDataRaw = localStorage.getItem('currentUser');
@@ -93,15 +93,25 @@ async function init() {
     const email = JSON.parse(userRaw).email;
 
     let categories = [];
-const pathsToTry = ['./js/list_tasks.json', 'js/list_tasks.json', 'list_tasks.json'];
+    
+    // רשימת נתיבים לבדיקה (כולל נתיבים יחסיים פשוטים)
+    const pathsToTry = ['./js/list_tasks.json', 'js/list_tasks.json', './JS/list_tasks.json', 'list_tasks.json'];
+
+    // 🔴 כאן הדבקנו את הלולאה החדשה שמציפה שגיאות לקונסולה
     for (let path of pathsToTry) {
         try {
+            console.log("מנסה לטעון מהנתיב:", path);
             const response = await fetch(path);
+            console.log(`סטטוס תגובה עבור ${path}:`, response.status);
+            
             if (response.ok) {
                 categories = await response.json();
+                console.log("הקובץ נטען בהצלחה מהנתיב:", path);
                 break;
             }
-        } catch (e) { }
+        } catch (e) { 
+            console.error(`נכשלה הטעינה עבור הנתיב ${path}. שגיאה:`, e);
+        }
     }
 
     if (!categories || categories.length === 0) {
@@ -173,7 +183,7 @@ const pathsToTry = ['./js/list_tasks.json', 'js/list_tasks.json', 'list_tasks.js
                     <h3 class="title">${categoryName}</h3>
                     <span class="arrow" id="arrow-${index}">▼</span>
                 </div>
-                <div class="category-content" id="content-${index}" style="display: none; flex-direction: column;">
+                <div class="category-content" id="content-${index}" style="style="display: none; flex-direction: column;">
                     ${tasksHtml}
                 </div>
             </div>
