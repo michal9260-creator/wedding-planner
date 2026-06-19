@@ -11,6 +11,7 @@
 </head>
 
 <body>
+    <button class="theme-toggle-btn" onclick="toggleDarkMode()">מצב כהה 🌙</button>
     <div class="page-wrapper">
         <div class="Task_index">
             <div class="index_top">
@@ -64,19 +65,17 @@
                 <span class="title-heart">♥</span>
                 <span class="title-line"></span>
             </div>
+            <div class="search-wrapper">
+                <input type="text" id="taskSearchInput" placeholder="חפשו קטגוריה... " oninput="filterCategories()">
+            </div>
             <div id="categoriesContainer" class="grid"></div>
+
             <div class="more-lists">
                 <a href="index.html" class="btn-list">
                     <span> חזרה לרשימות הכלליות</span>
                     <span class="arrow-icon"></span> </a>
             </div>
         </div>
-
-
-
-        <!-- <div class="img-petek">
-            <img src="../pic/תזכורת3.png" alt="תזכורת" class="p-side-2">
-        </div> -->
 
     </div>
 

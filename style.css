@@ -184,6 +184,7 @@ select:focus {
 
 .percentage {
     font-size: 18px;
+    font-weight: 600;
     color: #5b6b63;
 }
 
@@ -224,7 +225,7 @@ select:focus {
    ========================================================================== */
 .top-logo {
     position: absolute;
-    top: 1%;
+    top: 0.5%;
     left: 2%;
     width: 14%;
     min-width: 120px;
@@ -700,6 +701,19 @@ h1 {
     opacity: 0.8;
 }
 
+.summary_list {
+    left: 4%;
+    bottom: 40%;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 22px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border: 1px solid #c4913a;
+    width: 15%;
+    opacity: 0.8;
+    z-index: 4;
+}
+
 .summary-header {
     display: flex;
     align-items: center;
@@ -792,6 +806,166 @@ h1 {
     }
 }
 
+/* עיצוב מעודכן לכרטיס סיכום מהיר - מונע מתיחה לגובה */
+.summary-card-fixed {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    border: 1px solid #c4913a;
+    width: 100%;
+    max-width: 310px;
+    /* תואם לרוחב כרטיסי המשימות */
+
+    /* השינוי החשוב: מונע מהכרטיס להימתח לגובה של שאר הטורים */
+    align-self: start;
+    opacity: 0.8;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    direction: rtl;
+    margin: 0 auto;
+    /* מרכז אותו בתוך התא שלו */
+}
+
+.summary-card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    border-bottom: 1px dashed #c2d8ca;
+    padding-bottom: 15px;
+}
+
+.summary-card-icon-box {
+    color: #4a5e52;
+    /* ירוק זית כהה */
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+}
+
+.summary-card-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #4a5e52;
+    margin: 0;
+}
+
+.summary-card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.summary-card-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.summary-card-divider {
+    border-top: 1px solid #f4f6f4;
+    border-bottom: 1px solid #f4f6f4;
+    padding: 12px 0;
+}
+
+.summary-card-label {
+    font-size: 14px;
+    color: #7a8c82;
+}
+
+.summary-card-num {
+    font-size: 22px;
+    font-weight: 700;
+    color: #4a5e52;
+}
+
+.summary-card-num.completed {
+    color: #8da495;
+    /* ירוק זית רך */
+}
+
+.summary-card-num.pending {
+    color: #c4913a;
+    /* זהב יוקרתי */
+}
+/* עיצוב אופציונלי לבלוק משימות שהושלם לחלוטין וירד למטה */
+.category-card-completed {
+    opacity: 0.75; /* הופך אותו למעט שקוף ועדין */
+    border: 1px solid #c2d1c6 ; /* מסגרת ירקרקה חלקה */
+    transition: all 0.3s ease;
+}
+
+.category-card-completed:hover {
+    opacity: 1; /* כשמרחפים מעליו הוא חוזר לצבע מלא */
+}
+.search-wrapper {
+    max-width: 400px;
+    margin: 0 auto 25px auto;
+    display: flex;
+    justify-content: center;
+}
+
+#taskSearchInput {
+    width: 100%;
+    padding: 12px 20px;
+    border-radius: 25px;
+    border: 1px solid #c2d1c6;
+    background-color: #ffffff;
+    font-size: 15px;
+    color: #4a5e52;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+#taskSearchInput:focus {
+    border-color: #c4913a; /* זהב במיקוד */
+    box-shadow: 0 0 8px rgba(196, 145, 58, 0.15);
+}
+/* 1. הגדרת משתנה לתמונת הרקע */
+:root {
+    --bg-image: url('../pic/לוח.png');
+}
+
+/* 2. החלפת התמונה במצב כהה - משפיע ישירות על ה-page-wrapper */
+body.dark-mode .page-wrapper {
+    background-image: none ; /* מוחק ומסיר את תמונת הרקע לחלוטין! */
+    background-color: #2c3531 ; /* צבע חלק כהה (גוון זית-כהה יפה שמתאים לאלמנטים הבהירים) */
+}
+
+/* 3. עדכון ה-page-wrapper הקיים שלך שישתמש במשתנה הדינמי */
+.page-wrapper {
+    background-image: var(--bg-image);
+    background-color: transparent;
+    background-repeat: repeat;
+    transition: background 0.3s ease; /* מעבר חלק ונעים לעין בלחיצה (שינינו ל-background כללי) */
+}
+
+.theme-toggle-btn {
+    position: fixed;
+    top: 170px; /* שינינו מ-20px ל-150px כדי שירד מתחת ללוגו */
+    left: 5%;
+    z-index: 10;
+    opacity: 0.8;
+        background: #ffffff;
+
+    /* כל שאר העיצוב שלך נשאר בדיוק אותו דבר... */
+    border: 2px solid #c2d1c6;
+    color: #4a5e52;
+    padding: 10px 18px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+}
+
+.theme-toggle-btn:hover {
+    transform: scale(1.05);
+}
 /* ==========================================================================
    9. חוקי רספונסיביות והתכווצות (ללא שינוי סדר!)
    ========================================================================== */

@@ -159,6 +159,7 @@ async function init() {
         lucide.createIcons();
     }
     updateProgress();
+    updateQuickSummary()
 }
 
 function save() {
@@ -183,6 +184,7 @@ function save() {
 
     localStorage.setItem('userTasksState_' + email, JSON.stringify(tasksList));
     updateProgress();
+    updateQuickSummary()
 }
 
 function addNewTask(categoryIndex) {
@@ -228,5 +230,64 @@ function updateProgress() {
     if (horizCompleted) horizCompleted.textContent = completed;
     if (horizTotal) horizTotal.textContent = total;
 }
+function updateQuickSummary() {
+    // משיכת אימייל המשתמש הנוכחי כדי לגשת ל-LocalStorage הנכון
+    const userRaw = localStorage.getItem('currentUser');
+    if (!userRaw) return;
+    const email = JSON.parse(userRaw).email;
 
+    // משיכת הנתונים שנשמרו בפועל תחת ה-email
+    const savedRaw = localStorage.getItem('userTasksState_' + email);
+    
+    let total = 0;
+    let completed = 0;
+
+    if (savedRaw) {
+        const tasksList = JSON.parse(savedRaw);
+        total = tasksList.length;
+        // סינון המשימות שבוצעו (שבהן checked הוא true)
+        completed = tasksList.filter(t => t.checked).length;
+    }
+
+    // עדכון המספרים ב-DOM
+    const totalEl = document.getElementById('totalTasksCount');
+    const completedEl = document.getElementById('completedTasksCount');
+    const remainingEl = document.getElementById('remainingTasksCount');
+
+    if (totalEl) totalEl.textContent = total;
+    if (completedEl) completedEl.textContent = completed;
+    if (remainingEl) remainingEl.textContent = (total - completed);
+}
+// פונקציה לעדכון הטקסט והאייקון בתוך הכפתור הבהיר
+function updateButtonText(isDark) {
+    const btn = document.querySelector('.theme-toggle-btn');
+    if (btn) {
+        // אם האתר כהה -> הכפתור יציע לעבור לבהיר. אם האתר בהיר -> הכפתור יציע לעבור לכהה.
+        btn.innerHTML = isDark ? "מצב בהיר ☀️" : "מצב כהה 🌙";
+    }
+}
+
+// הפונקציה שמופעלת בלחיצה על הכפתור
+function toggleDarkMode() {
+    const isDark = document.body.classList.toggle('dark-mode');
+    localStorage.setItem('darkModeEnabled', isDark); // שומר את הבחירה להמשך
+    updateButtonText(isDark);
+}
+
+// מה קורה כשהעמוד נטען בפעם הראשונה
+document.addEventListener('DOMContentLoaded', () => {
+    // שליפת המצב השמור. אם המשתמש מעולם לא לחץ (פעם ראשונה באתר) -> יחזור false (מצב בהיר)
+    const isDarkSaved = localStorage.getItem('darkModeEnabled') === 'true';
+    
+    if (isDarkSaved) {
+        document.body.classList.add('dark-mode');
+    } else {
+        document.body.classList.remove('dark-mode'); // מבטיח שברירת המחדל היא בהיר
+    }
+    
+    // מעדכן את הטקסט בכפתור בהתאם למצב הנוכחי
+    updateButtonText(isDarkSaved);
+});
+// עדכון ה-init שגם יקרא לפונקציית הסיכום המהיר לאחר טעינת הנתונים
+// (מומלץ להוסיף קריאה ל-updateQuickSummary בסוף פונקציית save ו-init)
 document.addEventListener('DOMContentLoaded', init);

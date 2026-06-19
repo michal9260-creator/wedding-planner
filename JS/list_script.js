@@ -1,5 +1,5 @@
 // =======================================================
-// קובץ JS מלא עבור עמוד המשימות המפורטות (גרסת בדיקה ושגיאות)
+// קובץ JS מלא עבור עמוד המשימות המפורטות (כולל מיון דינמי)
 // =======================================================
 
 const savedDataRaw = localStorage.getItem('currentUser');
@@ -77,7 +77,10 @@ function getIcon(key) {
         "shopping_a": `<i data-lucide="shopping-bag"></i>`,
         "shopping_b": `<i data-lucide="plug"></i>`,
         "shopping_c": `<i data-lucide="shopping-cart"></i>`,
-        "shopping_d": `<i data-lucide="utensils"></i>`
+        "shopping_d": `<i data-lucide="utensils"></i>`,
+        "shopping_e": `<i data-lucide="sparkles"></i>`,
+        "tasks_after_wedding": `<i data-lucide="hourglass"></i>`,
+        "spiritual": `<i data-lucide="book-open"></i>`
     };
     return map[key] || `<i data-lucide="check-circle"></i>`;
 }
@@ -93,25 +96,16 @@ async function init() {
     const email = JSON.parse(userRaw).email;
 
     let categories = [];
-    
-    // רשימת נתיבים לבדיקה (כולל נתיבים יחסיים פשוטים)
-    const pathsToTry = ['./js/list_tasks.json', 'js/list_tasks.json', './JS/list_tasks.json', 'list_tasks.json'];
+    const pathsToTry = ['../js/list_tasks.json', '../JS/list_tasks.json', './js/list_tasks.json', 'list_tasks.json'];
 
-    // 🔴 כאן הדבקנו את הלולאה החדשה שמציפה שגיאות לקונסולה
     for (let path of pathsToTry) {
         try {
-            console.log("מנסה לטעון מהנתיב:", path);
             const response = await fetch(path);
-            console.log(`סטטוס תגובה עבור ${path}:`, response.status);
-            
             if (response.ok) {
                 categories = await response.json();
-                console.log("הקובץ נטען בהצלחה מהנתיב:", path);
                 break;
             }
-        } catch (e) { 
-            console.error(`נכשלה הטעינה עבור הנתיב ${path}. שגיאה:`, e);
-        }
+        } catch (e) { }
     }
 
     if (!categories || categories.length === 0) {
@@ -129,10 +123,43 @@ async function init() {
     const savedRaw = localStorage.getItem('userTasks_v2_' + email);
     let savedData = savedRaw ? JSON.parse(savedRaw) : null;
 
+    // --- מנגנון המיון הדינמי ---
+    let activeCategories = [];
+    let completedCategories = [];
+
+    categories.forEach(cat => {
+        let isCategoryFullyCompleted = true;
+
+        if (cat.tasks && Array.isArray(cat.tasks) && cat.tasks.length > 0) {
+            cat.tasks.forEach(task => {
+                let isChecked = false;
+                if (savedData) {
+                    const found = savedData.find(t => t.id === task.id);
+                    if (found) isChecked = found.checked;
+                }
+                if (!isChecked) {
+                    isCategoryFullyCompleted = false;
+                }
+            });
+        } else {
+            isCategoryFullyCompleted = false;
+        }
+
+        if (isCategoryFullyCompleted) {
+            completedCategories.push(cat);
+        } else {
+            activeCategories.push(cat);
+        }
+    });
+
+    const sortedCategories = [...activeCategories, ...completedCategories];
+    // -------------------------
+
     let html = '';
 
-    categories.forEach((cat, index) => {
+    sortedCategories.forEach((cat, index) => {
         let tasksHtml = '';
+        let isCategoryFullyCompleted = true;
 
         if (cat.tasks && Array.isArray(cat.tasks)) {
             cat.tasks.forEach(task => {
@@ -142,6 +169,8 @@ async function init() {
                     if (found) isChecked = found.checked;
                 }
 
+                if (!isChecked) isCategoryFullyCompleted = false;
+
                 tasksHtml += `
                     <label class="todo-item">
                         <input type="checkbox" id="${task.id}" ${isChecked ? 'checked' : ''} onchange="save()">
@@ -149,19 +178,22 @@ async function init() {
                     </label>
                 `;
             });
+        } else {
+            isCategoryFullyCompleted = false;
         }
 
         const categoryName = cat.categoryTitle || "משימות";
         const icon = getIcon(cat.categoryKey);
+        const completedClass = isCategoryFullyCompleted ? 'category-card-completed' : '';
 
         if (isDetailedPage) {
             html += `
-            <div class="category-card">
+            <div class="category-card ${completedClass}">
                 <div class="card-header" style="cursor: default;">
                     <div class="icon-box">
                         <span class="icon">${icon}</span>
                     </div>
-                    <h3 class="title">${categoryName}</h3>
+                    <h3 class="title">${categoryName} ${isCategoryFullyCompleted ? '✓ ' : ''}</h3>
                 </div>
                 <div class="category-content" id="content-${index}" style="display: flex; flex-direction: column;">
                     <div class="tasks-list-container" id="list-${index}">
@@ -175,21 +207,48 @@ async function init() {
             `;
         } else {
             html += `
-            <div class="category-card">
+            <div class="category-card ${completedClass}">
                 <div class="card-header" onclick="toggleCategory('${index}')">
                     <div class="icon-box">
                         <span class="icon">${icon}</span>
                     </div>
-                    <h3 class="title">${categoryName}</h3>
+                    <h3 class="title">${categoryName} ${isCategoryFullyCompleted ? '💪' : ''}</h3>
                     <span class="arrow" id="arrow-${index}">▼</span>
                 </div>
-                <div class="category-content" id="content-${index}" style="style="display: none; flex-direction: column;">
+                <div class="category-content" id="content-${index}" style="display: none; flex-direction: column;">
                     ${tasksHtml}
                 </div>
             </div>
             `;
         }
     });
+
+    if (isDetailedPage) {
+        html += `
+        <div class="summary-card-fixed">
+            <div class="summary-card-header">
+                <div class="summary-card-icon-box">
+                    <i data-lucide="clipboard-check"></i>
+                </div>
+                <h3 class="summary-card-title">סיכום מהיר</h3>
+            </div>
+            <div class="summary-card-body">
+                <div class="summary-card-row">
+                    <span class="summary-card-label">סך הכל משימות:</span>
+                    <strong class="summary-card-num" id="totalTasksCount">0</strong>
+                </div>
+                <div class="summary-card-row summary-card-divider">
+                    <span class="summary-card-label">הושלמו:</span>
+                    <strong class="summary-card-num completed" id="completedTasksCount">0</strong>
+                </div>
+                <div class="summary-card-row">
+                    <span class="summary-card-label">נותרו לביצוע:</span>
+                    <strong class="summary-card-num pending" id="remainingTasksCount">0</strong>
+                </div>
+            </div>
+        </div>
+        `;
+    }
 
     container.innerHTML = html;
 
@@ -199,6 +258,7 @@ async function init() {
     updateProgress();
 }
 
+// פונקציית שמירה מלאה שמבצעת רינדור מחדש לצורך המיון בלייב
 function save() {
     const userRaw = localStorage.getItem('currentUser');
     if (!userRaw) return;
@@ -220,7 +280,9 @@ function save() {
     });
 
     localStorage.setItem('userTasks_v2_' + email, JSON.stringify(tasksList));
-    updateProgress();
+    
+    // מריץ מחדש את הטעינה כדי שהכרטיסים יחליפו מקומות מיד במסך
+    init(); 
 }
 
 function addNewTask(categoryIndex) {
@@ -265,6 +327,65 @@ function updateProgress() {
     if (horizPercentage) horizPercentage.textContent = percentage + '%';
     if (horizCompleted) horizCompleted.textContent = completed;
     if (horizTotal) horizTotal.textContent = total;
+
+    const totalCountEl = document.getElementById('totalTasksCount');
+    const completedCountEl = document.getElementById('completedTasksCount');
+    const remainingCountEl = document.getElementById('remainingTasksCount');
+
+    if (totalCountEl) totalCountEl.textContent = total;
+    if (completedCountEl) completedCountEl.textContent = completed;
+    if (remainingCountEl) remainingCountEl.textContent = (total - completed);
+}
+function filterCategories() {
+    const query = document.getElementById('taskSearchInput').value.toLowerCase().trim();
+    // תופס גם את כרטיסי המשימות וגם את כרטיס הסיכום
+    const cards = document.querySelectorAll('#categoriesContainer > div');
+
+    cards.forEach(card => {
+        // אם זה כרטיס הסיכום המהיר - אל תיגע בו, תשאיר אותו תמיד גלוי
+        if (card.classList.contains('summary-card-fixed')) {
+            card.style.display = 'flex';
+            return;
+        }
+
+        const titleText = card.querySelector('.title')?.textContent.toLowerCase() || '';
+        
+        // סינון המשימות לפי מה שהוקלד
+        if (titleText.includes(query)) {
+            card.style.display = ''; // מחזיר למצב ברירת המחדל (Grid/Flex)
+        } else {
+            card.style.display = 'none'; // מסתיר את הכרטיס
+        }
+    });
+}
+// פונקציה לעדכון הטקסט והאייקון בתוך הכפתור הבהיר
+function updateButtonText(isDark) {
+    const btn = document.querySelector('.theme-toggle-btn');
+    if (btn) {
+        // אם האתר כהה -> הכפתור יציע לעבור לבהיר. אם האתר בהיר -> הכפתור יציע לעבור לכהה.
+        btn.innerHTML = isDark ? "מצב בהיר ☀️" : "מצב כהה 🌙";
+    }
 }
 
+// הפונקציה שמופעלת בלחיצה על הכפתור
+function toggleDarkMode() {
+    const isDark = document.body.classList.toggle('dark-mode');
+    localStorage.setItem('darkModeEnabled', isDark); // שומר את הבחירה להמשך
+    updateButtonText(isDark);
+}
+
+// מה קורה כשהעמוד נטען בפעם הראשונה
+document.addEventListener('DOMContentLoaded', () => {
+    // שליפת המצב השמור. אם המשתמש מעולם לא לחץ (פעם ראשונה באתר) -> יחזור false (מצב בהיר)
+    const isDarkSaved = localStorage.getItem('darkModeEnabled') === 'true';
+    
+    if (isDarkSaved) {
+        document.body.classList.add('dark-mode');
+    } else {
+        document.body.classList.remove('dark-mode'); // מבטיח שברירת המחדל היא בהיר
+    }
+    
+    // מעדכן את הטקסט בכפתור בהתאם למצב הנוכחי
+    updateButtonText(isDarkSaved);
+});
 document.addEventListener('DOMContentLoaded', init);

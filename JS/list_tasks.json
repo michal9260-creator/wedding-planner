@@ -750,5 +750,485 @@
                 "checked": false
             }
         ]
-    }
+    },
+    {
+    "categoryKey": "shopping_e",
+    "categoryTitle": "מוצרי ניקוי והיגיינה :",
+    "tasks": [
+        {
+            "id": "task-apte-1",
+            "text": "כלים וסכו\"ם חד פעמיים",
+            "checked": false
+        },
+        {
+            "id": "task-apte-2",
+            "text": "מפיות",
+            "checked": false
+        },
+        {
+            "id": "task-apte-3",
+            "text": "נרות לשבת",
+            "checked": false
+        },
+        {
+            "id": "task-apte-4",
+            "text": "להבדלה ונר נשמה",
+            "checked": false
+        },
+        {
+            "id": "task-apte-5",
+            "text": "זכוכיות לנרות",
+            "checked": false
+        },
+        {
+            "id": "task-apte-6",
+            "text": "נוזל כלים",
+            "checked": false
+        },
+        {
+            "id": "task-apte-7",
+            "text": "סקוצ'ים",
+            "checked": false
+        },
+        {
+            "id": "task-apte-8",
+            "text": "ברזלית לכלים/ צמר פלדה",
+            "checked": false
+        },
+        {
+            "id": "task-apte-9",
+            "text": "כרית לשטיפת כלים בשבת",
+            "checked": false
+        },
+        {
+            "id": "task-apte-10",
+            "text": "שקיות אשפתון",
+            "checked": false
+        },
+        {
+            "id": "task-apte-11",
+            "text": "סנדוויץ והקפאה",
+            "checked": false
+        },
+        {
+            "id": "task-apte-12",
+            "text": "מטליות לשייש",
+            "checked": false
+        },
+        {
+            "id": "task-apte-13",
+            "text": "מטליות לאבק",
+            "checked": false
+        },
+        {
+            "id": "task-apte-14",
+            "text": "כפפות חד-פעמיות",
+            "checked": false
+        },
+        {
+            "id": "task-apte-15",
+            "text": "מטליות לשטיפת רצפה",
+            "checked": false
+        },
+        {
+            "id": "task-apte-16",
+            "text": "חומרי-נקוי",
+            "checked": false
+        },
+        {
+            "id": "task-apte-17",
+            "text": "מברשת שיניים ומשחת שיניים",
+            "checked": false
+        },
+        {
+            "id": "task-apte-18",
+            "text": "שמפו ומרכך",
+            "checked": false
+        },
+        {
+            "id": "task-apte-19",
+            "text": "סבונים",
+            "checked": false
+        },
+        {
+            "id": "task-apte-20",
+            "text": "טישו",
+            "checked": false
+        },
+        {
+            "id": "task-apte-21",
+            "text": "מגבונים לחים",
+            "checked": false
+        },
+        {
+            "id": "task-apte-22",
+            "text": "מברשת לאסלה",
+            "checked": false
+        },
+        {
+            "id": "task-apte-23",
+            "text": "מטהר-אוויר",
+            "checked": false
+        },
+        {
+            "id": "task-apte-24",
+            "text": "נייר-טואלט",
+            "checked": false
+        },
+        {
+            "id": "task-apte-25",
+            "text": "נייר-חתוך לשבת",
+            "checked": false
+        },
+        {
+            "id": "task-apte-26",
+            "text": "מרכך ואבקת-כביסה",
+            "checked": false
+        },
+        {
+            "id": "task-apte-27",
+            "text": "אטביי-כביסה",
+            "checked": false
+        },
+        {
+            "id": "task-apte-28",
+            "text": "ספריי להסרת כתמים לפני הכביסה",
+            "checked": false
+        },
+        {
+            "id": "task-apte-29",
+            "text": "סינטבון",
+            "checked": false
+        },
+        {
+            "id": "task-apte-30",
+            "text": "תחבושות-היגיניות",
+            "checked": false
+        },
+        {
+            "id": "task-apte-31",
+            "text": "קרם-ידיים",
+            "checked": false
+        },
+        {
+            "id": "task-apte-32",
+            "text": "צמר-גפן",
+            "checked": false
+        },
+        {
+            "id": "task-apte-33",
+            "text": "מפות-ניילון",
+            "checked": false
+        },
+        {
+            "id": "task-apte-34",
+            "text": "ניילון-נצמד",
+            "checked": false
+        },
+        {
+            "id": "task-apte-35",
+            "text": "נייר-כסף (אלומניום)",
+            "checked": false
+        },
+        {
+            "id": "task-apte-36",
+            "text": "תבניות חד-פעמיות",
+            "checked": false
+        },
+        {
+            "id": "task-apte-37",
+            "text": "נייר-סופג (נייר מגבת)",
+            "checked": false
+        },
+        {
+            "id": "task-apte-38",
+            "text": "נייר-אפיה",
+            "checked": false
+        },
+        {
+            "id": "task-apte-39",
+            "text": "קסמיי-שניים",
+            "checked": false
+        },
+        {
+            "id": "task-apte-40",
+            "text": "קסמיי-אוזניים",
+            "checked": false
+        },
+        {
+            "id": "task-apte-41",
+            "text": "משחת-נעלים",
+            "checked": false
+        },
+        {
+            "id": "task-apte-42",
+            "text": "ספריי נגד חרקים",
+            "checked": false
+        },
+        {
+            "id": "task-apte-43",
+            "text": "גפרורים",
+            "checked": false
+        }
+    ]
+},
+{
+    "categoryKey": "shopping_f",
+    "categoryTitle": "שונות :",
+    "tasks": [
+        {
+            "id": "task-aptf-1",
+            "text": "שטיחון לכניסה",
+            "checked": false
+        },
+        {
+            "id": "task-aptf-2",
+            "text": "קולבים",
+            "checked": false
+        },
+        {
+            "id": "task-aptf-3",
+            "text": "סינר",
+            "checked": false
+        },
+        {
+            "id": "task-aptf-4",
+            "text": "מתלים למגבות, לבגדים ולמעילים",
+            "checked": false
+        },
+        {
+            "id": "task-aptf-5",
+            "text": "כבל מאריך",
+            "checked": false
+        },
+        {
+            "id": "task-aptf-6",
+            "text": "תקע מעביר",
+            "checked": false
+        },
+        {
+            "id": "task-aptf-7",
+            "text": "חוט תפירה לבן, שחור ומחטים",
+            "checked": false
+        },
+        {
+            "id": "task-aptf-8",
+            "text": "נר הבדלה",
+            "checked": false
+        },
+        {
+            "id": "task-aptf-9",
+            "text": "סיכות ביטחון",
+            "checked": false
+        },
+        {
+            "id": "task-aptf-10",
+            "text": "סיכות ראש",
+            "checked": false
+        },
+        {
+            "id": "task-aptf-11",
+            "text": "פנס",
+            "checked": false
+        },
+        {
+            "id": "task-aptf-12",
+            "text": "מנורת לילה",
+            "checked": false
+        },
+        {
+            "id": "task-aptf-13",
+            "text": "בטריות",
+            "checked": false
+        },
+        {
+            "id": "task-aptf-14",
+            "text": "נורות",
+            "checked": false
+        },
+        {
+            "id": "task-aptf-15",
+            "text": "שעון קיר",
+            "checked": false
+        },
+        {
+            "id": "task-aptf-16",
+            "text": "מראה",
+            "checked": false
+        },
+        {
+            "id": "task-aptf-17",
+            "text": "פקקים לכיור ולאמבטיה",
+            "checked": false
+        },
+        {
+            "id": "task-aptf-18",
+            "text": "פטיש ומסמרים",
+            "checked": false
+        },
+        {
+            "id": "task-aptf-19",
+            "text": "מעטפות, בולים ונייר-מכתבים למכתבי תודה לאורחים על המתנות",
+            "checked": false
+        },
+        {
+            "id": "task-aptf-20",
+            "text": "אקמול",
+            "checked": false
+        },
+        {
+            "id": "task-aptf-21",
+            "text": "פלסטרים",
+            "checked": false
+        },
+        {
+            "id": "task-aptf-22",
+            "text": "פולידין",
+            "checked": false
+        },
+        {
+            "id": "task-aptf-23",
+            "text": "מדחום",
+            "checked": false
+        },
+        {
+            "id": "task-aptf-24",
+            "text": "לוח שנה",
+            "checked": false
+        },
+        {
+            "id": "task-aptf-25",
+            "text": "דפים",
+            "checked": false
+        },
+        {
+            "id": "task-aptf-26",
+            "text": "עטים",
+            "checked": false
+        },
+        {
+            "id": "task-aptf-27",
+            "text": "פתקים מרובעים",
+            "checked": false
+        },
+        {
+            "id": "task-aptf-28",
+            "text": "נייר דבק",
+            "checked": false
+        },
+        {
+            "id": "task-aptf-29",
+            "text": "מספריים",
+            "checked": false
+        },
+        {
+            "id": "task-aptf-30",
+            "text": "גומיות",
+            "checked": false
+        },
+        {
+            "id": "task-aptf-31",
+            "text": "מזוודה",
+            "checked": false
+        },
+        {
+            "id": "task-aptf-32",
+            "text": "קלסר לתיוק מסמכים חשובים כגון: כתובה, תעודת לידה, תעודת נישואין, וכו..",
+            "checked": false
+        }
+    ]
+},
+{
+    "categoryKey": "tasks_after_wedding",
+    "categoryTitle": "משימות לאחרי החתונה :",
+    "tasks": [
+        {
+            "id": "task-aptaw-1",
+            "text": "להחזיר שמלת כלה",
+            "checked": false
+        },
+        {
+            "id": "task-aptaw-2",
+            "text": "להחזיר אביזרים שאולים מגמחים",
+            "checked": false
+        },
+        {
+            "id": "task-aptaw-3",
+            "text": "לפתוח מתנות ולכתוב מכתבי תודה (כשפותחים לרשום מי הביא כל מתנה בצורה מסודרת)",
+            "checked": false
+        },
+        {
+            "id": "task-aptaw-4",
+            "text": "החלפת מתנות כפולות",
+            "checked": false
+        },
+        {
+            "id": "task-aptaw-5",
+            "text": "להוציא תעודת נישואין היכן שנרשמתם",
+            "checked": false
+        },
+        {
+            "id": "task-aptaw-6",
+            "text": "לשנות ת.ז במשרד הפנים (להביא אתכם תעודת נישואין ושני תעודות הזהות)",
+            "checked": false
+        },
+        {
+            "id": "task-aptaw-7",
+            "text": "לעדכן פרטים בקופת חולים (כרטיס חדש, שם חדש, שינוי כתובת)",
+            "checked": false
+        },
+        {
+            "id": "task-aptaw-8",
+            "text": "לפתוח חשבון בנק משותף",
+            "checked": false
+        }
+    ]
+},
+{
+    "categoryKey": "spiritual",
+    "categoryTitle": "הכנות רוחניות לאורך כל התקופה :",
+    "tasks": [
+        {
+            "id": "task-sp-1",
+            "text": "הכנת רשימת בקשות ושמות לתפילה",
+            "checked": false
+        },
+        {
+            "id": "task-sp-2",
+            "text": "תפילה בכותל, קברי צדיקים",
+            "checked": false
+        },
+        {
+            "id": "task-sp-3",
+            "text": "ארבעים יום... לסיעתא דשמיא, לבנות בית יהודי אמיתי.",
+            "checked": false
+        },
+        {
+            "id": "task-sp-4",
+            "text": "להתפלל על החתן ובני משפחתו",
+            "checked": false
+        },
+        {
+            "id": "task-sp-5",
+            "text": "צדקה לעניים הגונים",
+            "checked": false
+        },
+        {
+            "id": "task-sp-6",
+            "text": "ברכות מרבנים/ רבניות",
+            "checked": false
+        },
+        {
+            "id": "task-sp-7",
+            "text": "לקרוא ולשמוע הרצאות על יום הנישואין ועל הבית היהודי",
+            "checked": false
+        },
+        {
+            "id": "task-sp-8",
+            "text": "להחזיר חובות/ הלוואות.",
+            "checked": false
+        }
+    ]
+}
+
 ]
