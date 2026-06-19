@@ -689,9 +689,9 @@ h1 {
 
 /* כרטיס סיכום מהיר בצד שמאל */
 .summary-container {
-    position: absolute;
+    position: fixed;
     left: 4%;
-    bottom: 53%;
+    margin-top: 220px;
     background: #ffffff;
     border-radius: 16px;
     padding: 22px;
@@ -891,16 +891,21 @@ h1 {
     color: #c4913a;
     /* זהב יוקרתי */
 }
+
 /* עיצוב אופציונלי לבלוק משימות שהושלם לחלוטין וירד למטה */
 .category-card-completed {
-    opacity: 0.75; /* הופך אותו למעט שקוף ועדין */
-    border: 1px solid #c2d1c6 ; /* מסגרת ירקרקה חלקה */
+    opacity: 0.75;
+    /* הופך אותו למעט שקוף ועדין */
+    border: 1px solid #c2d1c6;
+    /* מסגרת ירקרקה חלקה */
     transition: all 0.3s ease;
 }
 
 .category-card-completed:hover {
-    opacity: 1; /* כשמרחפים מעליו הוא חוזר לצבע מלא */
+    opacity: 1;
+    /* כשמרחפים מעליו הוא חוזר לצבע מלא */
 }
+
 .search-wrapper {
     max-width: 400px;
     margin: 0 auto 25px auto;
@@ -921,9 +926,11 @@ h1 {
 }
 
 #taskSearchInput:focus {
-    border-color: #c4913a; /* זהב במיקוד */
+    border-color: #c4913a;
+    /* זהב במיקוד */
     box-shadow: 0 0 8px rgba(196, 145, 58, 0.15);
 }
+
 /* 1. הגדרת משתנה לתמונת הרקע */
 :root {
     --bg-image: url('../pic/לוח.png');
@@ -931,8 +938,10 @@ h1 {
 
 /* 2. החלפת התמונה במצב כהה - משפיע ישירות על ה-page-wrapper */
 body.dark-mode .page-wrapper {
-    background-image: none ; /* מוחק ומסיר את תמונת הרקע לחלוטין! */
-    background-color: #2c3531 ; /* צבע חלק כהה (גוון זית-כהה יפה שמתאים לאלמנטים הבהירים) */
+    background-image: none;
+    /* מוחק ומסיר את תמונת הרקע לחלוטין! */
+    background-color: #2c3531;
+    /* צבע חלק כהה (גוון זית-כהה יפה שמתאים לאלמנטים הבהירים) */
 }
 
 /* 3. עדכון ה-page-wrapper הקיים שלך שישתמש במשתנה הדינמי */
@@ -940,16 +949,18 @@ body.dark-mode .page-wrapper {
     background-image: var(--bg-image);
     background-color: transparent;
     background-repeat: repeat;
-    transition: background 0.3s ease; /* מעבר חלק ונעים לעין בלחיצה (שינינו ל-background כללי) */
+    transition: background 0.3s ease;
+    /* מעבר חלק ונעים לעין בלחיצה (שינינו ל-background כללי) */
 }
 
 .theme-toggle-btn {
     position: fixed;
-    top: 170px; /* שינינו מ-20px ל-150px כדי שירד מתחת ללוגו */
+    top: 190px;
+    /* שינינו מ-20px ל-150px כדי שירד מתחת ללוגו */
     left: 5%;
     z-index: 10;
     opacity: 0.8;
-        background: #ffffff;
+    background: #ffffff;
 
     /* כל שאר העיצוב שלך נשאר בדיוק אותו דבר... */
     border: 2px solid #c2d1c6;
@@ -959,13 +970,14 @@ body.dark-mode .page-wrapper {
     cursor: pointer;
     font-size: 14px;
     font-weight: bold;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
     transition: all 0.3s ease;
 }
 
 .theme-toggle-btn:hover {
     transform: scale(1.05);
 }
+
 /* ==========================================================================
    9. חוקי רספונסיביות והתכווצות (ללא שינוי סדר!)
    ========================================================================== */
