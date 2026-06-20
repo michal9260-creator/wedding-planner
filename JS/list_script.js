@@ -1,6 +1,9 @@
 // =======================================================
-// קובץ JS מלא עבור עמוד המשימות המפורטות (כולל מיון דינמי)
+// קובץ JS מלא עבור עמוד המשימות המפורטות (כולל מיון דינמי) - מתוקן
 // =======================================================
+
+// 1. משתנה גלובלי לשמירת הקטגוריות והמשימות בזמן ריצה
+let globalCategories = [];
 
 const savedDataRaw = localStorage.getItem('currentUser');
 
@@ -95,29 +98,47 @@ async function init() {
     if (!userRaw) return;
     const email = JSON.parse(userRaw).email;
 
-    let categories = [];
-    const pathsToTry = ['../js/list_tasks.json', '../JS/list_tasks.json', './js/list_tasks.json', 'list_tasks.json'];
+    // טעינת הקטגוריות מהשרת/קובץ רק אם המערך הגלובלי ריק
+    if (globalCategories.length === 0) {
+        const pathsToTry = ['../js/list_tasks.json', '../JS/list_tasks.json', './js/list_tasks.json', 'list_tasks.json'];
 
-    for (let path of pathsToTry) {
-        try {
-            const response = await fetch(path);
-            if (response.ok) {
-                categories = await response.json();
-                break;
-            }
-        } catch (e) { }
-    }
+        for (let path of pathsToTry) {
+            try {
+                const response = await fetch(path);
+                if (response.ok) {
+                    globalCategories = await response.json();
+                    break;
+                }
+            } catch (e) { }
+        }
 
-    if (!categories || categories.length === 0) {
-        categories = [
-            {
-                "categoryKey": "apartment",
-                "categoryTitle": "הכנת דירה",
-                "tasks": [
-                    { "id": "check_json_file", "text": "יש לבדוק את תקינות קובץ ה-JSON" }
-                ]
-            }
-        ];
+        if (!globalCategories || globalCategories.length === 0) {
+            globalCategories = [
+                {
+                    "categoryKey": "apartment",
+                    "categoryTitle": "הכנת דירה",
+                    "tasks": [
+                        { "id": "check_json_file", "text": "יש לבדוק את תקינות קובץ ה-JSON" }
+                    ]
+                }
+            ];
+        }
+
+        // טעינת משימות מותאמות אישית שהמשתמש הוסיף בעצמו בעבר
+        const customSavedRaw = localStorage.getItem('userCustomTasks_v2_' + email);
+        if (customSavedRaw) {
+            const customSaved = JSON.parse(customSavedRaw);
+            globalCategories.forEach(cat => {
+                if (customSaved[cat.categoryKey]) {
+                    customSaved[cat.categoryKey].forEach(customTask => {
+                        // מניעת כפילויות בטעינה
+                        if (!cat.tasks.some(t => t.id === customTask.id)) {
+                            cat.tasks.push(customTask);
+                        }
+                    });
+                }
+            });
+        }
     }
 
     const savedRaw = localStorage.getItem('userTasks_v2_' + email);
@@ -127,7 +148,7 @@ async function init() {
     let activeCategories = [];
     let completedCategories = [];
 
-    categories.forEach(cat => {
+    globalCategories.forEach(cat => {
         let isCategoryFullyCompleted = true;
 
         if (cat.tasks && Array.isArray(cat.tasks) && cat.tasks.length > 0) {
@@ -152,12 +173,16 @@ async function init() {
         }
     });
 
+    // שמירת המפתח המקורי לזיהוי יציב שלא מושפע מהמיון
+    activeCategories.forEach(cat => cat._originalKey = cat.categoryKey);
+    completedCategories.forEach(cat => cat._originalKey = cat.categoryKey);
+
     const sortedCategories = [...activeCategories, ...completedCategories];
     // -------------------------
 
     let html = '';
 
-    sortedCategories.forEach((cat, index) => {
+    sortedCategories.forEach((cat) => {
         let tasksHtml = '';
         let isCategoryFullyCompleted = true;
 
@@ -185,6 +210,7 @@ async function init() {
         const categoryName = cat.categoryTitle || "משימות";
         const icon = getIcon(cat.categoryKey);
         const completedClass = isCategoryFullyCompleted ? 'category-card-completed' : '';
+        const catKey = cat._originalKey;
 
         if (isDetailedPage) {
             html += `
@@ -195,11 +221,11 @@ async function init() {
                     </div>
                     <h3 class="title">${categoryName} ${isCategoryFullyCompleted ? '✓ ' : ''}</h3>
                 </div>
-                <div class="category-content" id="content-${index}" style="display: flex; flex-direction: column;">
-                    <div class="tasks-list-container" id="list-${index}">
+                <div class="category-content" id="content-${catKey}" style="display: flex; flex-direction: column;">
+                    <div class="tasks-list-container" id="list-${catKey}">
                         ${tasksHtml}
                     </div>
-                    <button class="add-task-btn" onclick="addNewTask('${index}')">
+                    <button class="add-task-btn" onclick="addNewTask('${catKey}')">
                         <span class="plus-icon">+</span> הוסף משימה
                     </button>
                 </div>
@@ -208,14 +234,14 @@ async function init() {
         } else {
             html += `
             <div class="category-card ${completedClass}">
-                <div class="card-header" onclick="toggleCategory('${index}')">
+                <div class="card-header" onclick="toggleCategory('${catKey}')">
                     <div class="icon-box">
                         <span class="icon">${icon}</span>
                     </div>
                     <h3 class="title">${categoryName} ${isCategoryFullyCompleted ? '💪' : ''}</h3>
-                    <span class="arrow" id="arrow-${index}">▼</span>
+                    <span class="arrow" id="arrow-${catKey}">▼</span>
                 </div>
-                <div class="category-content" id="content-${index}" style="display: none; flex-direction: column;">
+                <div class="category-content" id="content-${catKey}" style="display: none; flex-direction: column;">
                     ${tasksHtml}
                 </div>
             </div>
@@ -281,27 +307,35 @@ function save() {
 
     localStorage.setItem('userTasks_v2_' + email, JSON.stringify(tasksList));
     
-    // מריץ מחדש את הטעינה כדי שהכרטיסים יחליפו מקומות מיד במסך
+    // שמירת המשימות החדשות שהמשתמש הוסיף בעצמו כדי שלא ייעלמו ברענון עמוד
+    const customTasksData = {};
+    globalCategories.forEach(cat => {
+        const customTasks = cat.tasks.filter(t => t.id.startsWith('custom_task_'));
+        if (customTasks.length > 0) {
+            customTasksData[cat.categoryKey] = customTasks;
+        }
+    });
+    localStorage.setItem('userCustomTasks_v2_' + email, JSON.stringify(customTasksData));
+    
+    // מריץ מחדש את הטעינה והמיון בצורה חלקה
     init(); 
 }
 
-function addNewTask(categoryIndex) {
+function addNewTask(categoryKey) {
     const taskText = prompt("הזינו את שם המשימה החדשה:");
     if (!taskText || taskText.trim() === "") return;
 
-    const listContainer = document.getElementById(`list-${categoryIndex}`);
-    if (!listContainer) return;
-
     const uniqueId = 'custom_task_' + Date.now();
+    const newTaskObj = { id: uniqueId, text: taskText.trim() };
 
-    const newTaskHtml = `
-        <label class="todo-item">
-            <input type="checkbox" id="${uniqueId}" onchange="save()">
-            <span>${taskText.trim()}</span>
-        </label>
-    `;
+    // מציאת הקטגוריה הנכונה במערך לפי ה-Key שלה ולא לפי אינדקס רנדומלי
+    const category = globalCategories.find(cat => cat.categoryKey === categoryKey);
+    if (category) {
+        if (!category.tasks) category.tasks = [];
+        category.tasks.push(newTaskObj);
+    }
 
-    listContainer.insertAdjacentHTML('beforeend', newTaskHtml);
+    // שמירה ורינדור אוטומטי מחדש
     save();
 }
 
@@ -336,13 +370,12 @@ function updateProgress() {
     if (completedCountEl) completedCountEl.textContent = completed;
     if (remainingCountEl) remainingCountEl.textContent = (total - completed);
 }
+
 function filterCategories() {
     const query = document.getElementById('taskSearchInput').value.toLowerCase().trim();
-    // תופס גם את כרטיסי המשימות וגם את כרטיס הסיכום
     const cards = document.querySelectorAll('#categoriesContainer > div');
 
     cards.forEach(card => {
-        // אם זה כרטיס הסיכום המהיר - אל תיגע בו, תשאיר אותו תמיד גלוי
         if (card.classList.contains('summary-card-fixed')) {
             card.style.display = 'flex';
             return;
@@ -350,42 +383,37 @@ function filterCategories() {
 
         const titleText = card.querySelector('.title')?.textContent.toLowerCase() || '';
         
-        // סינון המשימות לפי מה שהוקלד
         if (titleText.includes(query)) {
-            card.style.display = ''; // מחזיר למצב ברירת המחדל (Grid/Flex)
+            card.style.display = ''; 
         } else {
-            card.style.display = 'none'; // מסתיר את הכרטיס
+            card.style.display = 'none'; 
         }
     });
 }
-// פונקציה לעדכון הטקסט והאייקון בתוך הכפתור הבהיר
+
 function updateButtonText(isDark) {
     const btn = document.querySelector('.theme-toggle-btn');
     if (btn) {
-        // אם האתר כהה -> הכפתור יציע לעבור לבהיר. אם האתר בהיר -> הכפתור יציע לעבור לכהה.
         btn.innerHTML = isDark ? "מצב בהיר ☀️" : "מצב כהה 🌙";
     }
 }
 
-// הפונקציה שמופעלת בלחיצה על הכפתור
 function toggleDarkMode() {
     const isDark = document.body.classList.toggle('dark-mode');
-    localStorage.setItem('darkModeEnabled', isDark); // שומר את הבחירה להמשך
+    localStorage.setItem('darkModeEnabled', isDark); 
     updateButtonText(isDark);
 }
 
-// מה קורה כשהעמוד נטען בפעם הראשונה
 document.addEventListener('DOMContentLoaded', () => {
-    // שליפת המצב השמור. אם המשתמש מעולם לא לחץ (פעם ראשונה באתר) -> יחזור false (מצב בהיר)
     const isDarkSaved = localStorage.getItem('darkModeEnabled') === 'true';
     
     if (isDarkSaved) {
         document.body.classList.add('dark-mode');
     } else {
-        document.body.classList.remove('dark-mode'); // מבטיח שברירת המחדל היא בהיר
+        document.body.classList.remove('dark-mode'); 
     }
     
-    // מעדכן את הטקסט בכפתור בהתאם למצב הנוכחי
     updateButtonText(isDarkSaved);
 });
+
 document.addEventListener('DOMContentLoaded', init);
